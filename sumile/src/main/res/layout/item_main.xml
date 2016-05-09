@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/baseColorLight"
+    android:orientation="vertical"
+    android:padding="@dimen/itemPadding">
+
+    <TextView
+        android:id="@+id/id_contentTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="@color/contentTextColorWhite"
+        android:text="使用webView打开程序自己的代码离开时记得了付款就是离开的房间数量肯定"
+        android:textSize="@dimen/bigTextSize" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/id_contentDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/contentTextColor"
+            android:maxLines="5"
+            android:text="使用webView打开程序自己的代码离开时记得了付款就是离开的房间数量肯定" />
+
+        <TextView
+            android:id="@+id/id_contentDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:textColor="@color/contentTextColor"
+            android:gravity="right"
+            android:text="2016年4月28日"
+            android:textSize="@dimen/smallTextSize" />
+    </LinearLayout>
+</LinearLayout>

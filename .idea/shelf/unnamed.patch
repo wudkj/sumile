@@ -1,0 +1,3157 @@
+Index: sumile/src/main/res/layout/item_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/layout/item_main.xml	(revision )
++++ sumile/src/main/res/layout/item_main.xml	(revision )
+@@ -0,0 +1,42 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:background="@color/baseColorLight"
++    android:orientation="vertical"
++    android:padding="@dimen/itemPadding">
++
++    <TextView
++        android:id="@+id/id_contentTitle"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:maxLines="1"
++        android:textColor="@color/contentTextColorWhite"
++        android:text="使用webView打开程序自己的代码离开时记得了付款就是离开的房间数量肯定"
++        android:textSize="@dimen/bigTextSize" />
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="5dip"
++        android:orientation="vertical">
++
++        <TextView
++            android:id="@+id/id_contentDesc"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:textColor="@color/contentTextColor"
++            android:maxLines="5"
++            android:text="使用webView打开程序自己的代码离开时记得了付款就是离开的房间数量肯定" />
++
++        <TextView
++            android:id="@+id/id_contentDate"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_gravity="bottom|right"
++            android:textColor="@color/contentTextColor"
++            android:gravity="right"
++            android:text="2016年4月28日"
++            android:textSize="@dimen/smallTextSize" />
++    </LinearLayout>
++</LinearLayout>
+\ No newline at end of file
+Index: sumile/src/main/res/layout/textview.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/layout/textview.xml	(revision )
++++ sumile/src/main/res/layout/textview.xml	(revision )
+@@ -0,0 +1,39 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:orientation="vertical">
++
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:layout_gravity="center"
++        android:layout_marginBottom="10dp"
++        android:layout_marginTop="10dp"
++        android:gravity="center"
++        android:text="长按此处复制以下内容"
++        android:textSize="@dimen/bigTextSize" />
++
++    <ScrollView
++        android:layout_width="fill_parent"
++        android:layout_height="match_parent"
++        android:fillViewport="true">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent">
++
++            <TextView
++                android:id="@+id/textView"
++                android:layout_width="match_parent"
++                android:layout_height="match_parent"
++                android:layout_gravity="center"
++                android:gravity="center"
++                android:isScrollContainer="true"
++                android:paddingLeft="10dp"
++                android:paddingRight="10dp"
++                android:text="New Text" />
++        </LinearLayout>
++    </ScrollView>
++
++</LinearLayout>
+\ No newline at end of file
+Index: sumile/src/main/res/layout/main_header.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/layout/main_header.xml	(revision )
++++ sumile/src/main/res/layout/main_header.xml	(revision )
+@@ -0,0 +1,32 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="50dp"
++    android:background="@color/baseColor">
++
++    <ImageView
++        android:visibility="gone"
++        android:id="@+id/id_back"
++        android:layout_width="50dp"
++        android:layout_height="48dp"
++        android:padding="7dp"
++        android:src="@drawable/newlogo" />
++
++    <TextView
++        android:id="@+id/id_title"
++        android:layout_width="wrap_content"
++        android:layout_height="50dp"
++        android:layout_centerHorizontal="true"
++        android:layout_centerVertical="true"
++        android:gravity="center"
++        android:text="sumile"
++        android:textColor="@color/white"
++        android:textSize="@dimen/bigTextSize" />
++
++    <ImageView
++        android:id="@+id/id_github"
++        android:layout_width="50dp"
++        android:layout_height="50dp"
++        android:layout_alignParentRight="true"
++        android:src="@drawable/newlogo_white" />
++</RelativeLayout>
+\ No newline at end of file
+Index: sumile/src/main/res/values/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/values/dimens.xml	(revision )
++++ sumile/src/main/res/values/dimens.xml	(revision )
+@@ -0,0 +1,9 @@
++<resources>
++    <!-- Default screen margins, per the Android Design guidelines. -->
++    <dimen name="activity_horizontal_margin">16dp</dimen>
++    <dimen name="activity_vertical_margin">16dp</dimen>
++    <dimen name="fab_margin">16dp</dimen>
++    <dimen name="bigTextSize">18sp</dimen>
++    <dimen name="smallTextSize">9sp</dimen>
++    <dimen name="itemPadding">9dp</dimen>
++</resources>
+\ No newline at end of file
+Index: sumile/proguard-rules.pro
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/proguard-rules.pro	(revision )
++++ sumile/proguard-rules.pro	(revision )
+@@ -0,0 +1,17 @@
++# Add project specific ProGuard rules here.
++# By default, the flags in this file are appended to flags specified
++# in D:\quickDriver\soft\work\android\IDE\2SDK/tools/proguard/proguard-android.txt
++# You can edit the include path and order by changing the proguardFiles
++# directive in build.gradle.
++#
++# For more details, see
++#   http://developer.android.com/guide/developing/tools/proguard.html
++
++# Add any project specific keep options here:
++
++# If your project uses WebView with JS, uncomment the following
++# and specify the fully qualified class name to the JavaScript interface
++# class:
++#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
++#   public *;
++#}
+Index: sumile/src/main/java/net/sumile/sumile/util/DialogUtil.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/util/DialogUtil.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/util/DialogUtil.java	(revision )
+@@ -0,0 +1,84 @@
++package net.sumile.sumile.util;
++
++import android.app.AlertDialog;
++import android.content.ClipData;
++import android.content.ClipboardManager;
++import android.content.Context;
++import android.media.tv.TvContentRating;
++import android.support.v7.widget.LinearLayoutManager;
++import android.support.v7.widget.RecyclerView;
++import android.text.method.ReplacementTransformationMethod;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.widget.CheckBox;
++import android.widget.LinearLayout;
++import android.widget.TextView;
++import android.widget.Toast;
++
++import net.sumile.sumile.R;
++
++/**
++ * Created by Administrator on 2016/5/8.
++ */
++public class DialogUtil {
++    public static void showTextDialog(final Context context, String content) {
++        AlertDialog.Builder builder = getBuilderInstance(context);
++        mView = LayoutInflater.from(context).inflate(R.layout.textview, null);
++        tv = (TextView) mView.findViewById(R.id.textView);
++        tv.setText(content);
++        mView.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                if (isDialogShowing()) {
++                    mDialog.dismiss();
++                }
++            }
++        });
++        mView.setOnLongClickListener(new View.OnLongClickListener() {
++            @Override
++            public boolean onLongClick(View v) {
++                ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
++                clipboardManager.setPrimaryClip(ClipData.newPlainText(null, tv.getText().toString().trim()));
++                ToastUtil.showShortToast(context, "已经复制到剪贴板");
++                return true;
++            }
++        });
++        builder.setView(mView);
++        mDialog = builder.create();
++        if (mDialog != null) {
++            mDialog.show();
++        }
++    }
++
++    public static AlertDialog mDialog;
++
++    private DialogUtil() {
++
++    }
++
++    public static boolean isDialogShowing() {
++        if (mDialog != null) {
++            if (mDialog.isShowing()) {
++                return true;
++            } else {
++                return false;
++            }
++        }
++        return false;
++    }
++
++    private static AlertDialog.Builder mBuilder;
++    private static View mView;
++    private static TextView tv;
++
++    public static AlertDialog.Builder getBuilderInstance(Context context) {
++        if (mBuilder == null) {
++            synchronized (DialogUtil.class) {
++                if (mBuilder == null) {
++                    mBuilder = new AlertDialog.Builder(context, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
++                }
++            }
++        }
++        return mBuilder;
++    }
++}
+Index: sumile/src/main/java/net/sumile/sumile/view/HorizontalDividerItemDecoration.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/view/HorizontalDividerItemDecoration.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/view/HorizontalDividerItemDecoration.java	(revision )
+@@ -0,0 +1,157 @@
++package net.sumile.sumile.view;
++
++import android.content.Context;
++import android.graphics.Rect;
++import android.graphics.drawable.Drawable;
++import android.support.annotation.DimenRes;
++import android.support.v4.view.ViewCompat;
++import android.support.v7.widget.RecyclerView;
++import android.view.View;
++
++/**
++ * Created by yqritc on 2015/01/15.
++ */
++public class HorizontalDividerItemDecoration extends FlexibleDividerDecoration {
++
++    private MarginProvider mMarginProvider;
++
++    protected HorizontalDividerItemDecoration(Builder builder) {
++        super(builder);
++        mMarginProvider = builder.mMarginProvider;
++    }
++
++    @Override
++    protected Rect getDividerBound(int position, RecyclerView parent, View child) {
++        Rect bounds = new Rect(0, 0, 0, 0);
++        int transitionX = (int) ViewCompat.getTranslationX(child);
++        int transitionY = (int) ViewCompat.getTranslationY(child);
++        RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
++        bounds.left = parent.getPaddingLeft() +
++                mMarginProvider.dividerLeftMargin(position, parent) + transitionX;
++        bounds.right = parent.getWidth() - parent.getPaddingRight() -
++                mMarginProvider.dividerRightMargin(position, parent) + transitionX;
++
++        int dividerSize = getDividerSize(position, parent);
++        if (mDividerType == DividerType.DRAWABLE) {
++            // set top and bottom position of divider
++            if (mPositionInsideItem) {
++                bounds.bottom = child.getBottom() + params.topMargin + transitionY;
++                bounds.top = bounds.bottom - dividerSize;
++            } else {
++                bounds.top = child.getBottom() + params.topMargin + transitionY;
++                bounds.bottom = bounds.top + dividerSize;
++            }
++        } else {
++            // set center point of divider
++            if (mPositionInsideItem) {
++                bounds.top = child.getBottom() + params.topMargin - dividerSize / 2 + transitionY;
++            } else {
++                bounds.top = child.getBottom() + params.topMargin + dividerSize / 2 + transitionY;
++            }
++            bounds.bottom = bounds.top;
++        }
++
++        return bounds;
++    }
++
++    @Override
++    protected void setItemOffsets(Rect outRect, int position, RecyclerView parent) {
++        if (mPositionInsideItem) {
++            outRect.set(0, 0, 0, 0);
++        } else {
++            outRect.set(0, 0, 0, getDividerSize(position, parent));
++        }
++    }
++
++    private int getDividerSize(int position, RecyclerView parent) {
++        if (mPaintProvider != null) {
++            return (int) mPaintProvider.dividerPaint(position, parent).getStrokeWidth();
++        } else if (mSizeProvider != null) {
++            return mSizeProvider.dividerSize(position, parent);
++        } else if (mDrawableProvider != null) {
++            Drawable drawable = mDrawableProvider.drawableProvider(position, parent);
++            return drawable.getIntrinsicHeight();
++        }
++        throw new RuntimeException("failed to get size");
++    }
++
++    /**
++     * Interface for controlling divider margin
++     */
++    public interface MarginProvider {
++
++        /**
++         * Returns left margin of divider.
++         *
++         * @param position Divider position (or group index for GridLayoutManager)
++         * @param parent   RecyclerView
++         * @return left margin
++         */
++        int dividerLeftMargin(int position, RecyclerView parent);
++
++        /**
++         * Returns right margin of divider.
++         *
++         * @param position Divider position (or group index for GridLayoutManager)
++         * @param parent   RecyclerView
++         * @return right margin
++         */
++        int dividerRightMargin(int position, RecyclerView parent);
++    }
++
++    public static class Builder extends FlexibleDividerDecoration.Builder<Builder> {
++
++        private MarginProvider mMarginProvider = new MarginProvider() {
++            @Override
++            public int dividerLeftMargin(int position, RecyclerView parent) {
++                return 0;
++            }
++
++            @Override
++            public int dividerRightMargin(int position, RecyclerView parent) {
++                return 0;
++            }
++        };
++
++        public Builder(Context context) {
++            super(context);
++        }
++
++        public Builder margin(final int leftMargin, final int rightMargin) {
++            return marginProvider(new MarginProvider() {
++                @Override
++                public int dividerLeftMargin(int position, RecyclerView parent) {
++                    return leftMargin;
++                }
++
++                @Override
++                public int dividerRightMargin(int position, RecyclerView parent) {
++                    return rightMargin;
++                }
++            });
++        }
++
++        public Builder margin(int horizontalMargin) {
++            return margin(horizontalMargin, horizontalMargin);
++        }
++
++        public Builder marginResId(@DimenRes int leftMarginId, @DimenRes int rightMarginId) {
++            return margin(mResources.getDimensionPixelSize(leftMarginId),
++                    mResources.getDimensionPixelSize(rightMarginId));
++        }
++
++        public Builder marginResId(@DimenRes int horizontalMarginId) {
++            return marginResId(horizontalMarginId, horizontalMarginId);
++        }
++
++        public Builder marginProvider(MarginProvider provider) {
++            mMarginProvider = provider;
++            return this;
++        }
++
++        public HorizontalDividerItemDecoration build() {
++            checkBuilderParams();
++            return new HorizontalDividerItemDecoration(this);
++        }
++    }
++}
+\ No newline at end of file
+Index: sumile/src/main/java/net/sumile/sumile/view/FlexibleDividerDecoration.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/view/FlexibleDividerDecoration.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/view/FlexibleDividerDecoration.java	(revision )
+@@ -0,0 +1,419 @@
++package net.sumile.sumile.view;
++
++import android.content.Context;
++import android.content.res.Resources;
++import android.content.res.TypedArray;
++import android.graphics.Canvas;
++import android.graphics.Paint;
++import android.graphics.Rect;
++import android.graphics.drawable.Drawable;
++import android.support.annotation.ColorRes;
++import android.support.annotation.DimenRes;
++import android.support.annotation.DrawableRes;
++import android.support.v4.content.ContextCompat;
++import android.support.v7.widget.GridLayoutManager;
++import android.support.v7.widget.RecyclerView;
++import android.view.View;
++
++/**
++ * Created by yqritc on 2015/01/08.
++ */
++public abstract class FlexibleDividerDecoration extends RecyclerView.ItemDecoration {
++
++    private static final int DEFAULT_SIZE = 2;
++    private static final int[] ATTRS = new int[]{
++            android.R.attr.listDivider
++    };
++
++    protected enum DividerType {
++        DRAWABLE, PAINT, COLOR
++    }
++
++    protected DividerType mDividerType = DividerType.DRAWABLE;
++    protected VisibilityProvider mVisibilityProvider;
++    protected PaintProvider mPaintProvider;
++    protected ColorProvider mColorProvider;
++    protected DrawableProvider mDrawableProvider;
++    protected SizeProvider mSizeProvider;
++    protected boolean mShowLastDivider;
++    protected boolean mPositionInsideItem;
++    private Paint mPaint;
++
++    protected FlexibleDividerDecoration(Builder builder) {
++        if (builder.mPaintProvider != null) {
++            mDividerType = DividerType.PAINT;
++            mPaintProvider = builder.mPaintProvider;
++        } else if (builder.mColorProvider != null) {
++            mDividerType = DividerType.COLOR;
++            mColorProvider = builder.mColorProvider;
++            mPaint = new Paint();
++            setSizeProvider(builder);
++        } else {
++            mDividerType = DividerType.DRAWABLE;
++            if (builder.mDrawableProvider == null) {
++                TypedArray a = builder.mContext.obtainStyledAttributes(ATTRS);
++                final Drawable divider = a.getDrawable(0);
++                a.recycle();
++                mDrawableProvider = new DrawableProvider() {
++                    @Override
++                    public Drawable drawableProvider(int position, RecyclerView parent) {
++                        return divider;
++                    }
++                };
++            } else {
++                mDrawableProvider = builder.mDrawableProvider;
++            }
++            mSizeProvider = builder.mSizeProvider;
++        }
++
++        mVisibilityProvider = builder.mVisibilityProvider;
++        mShowLastDivider = builder.mShowLastDivider;
++        mPositionInsideItem = builder.mPositionInsideItem;
++    }
++
++    private void setSizeProvider(Builder builder) {
++        mSizeProvider = builder.mSizeProvider;
++        if (mSizeProvider == null) {
++            mSizeProvider = new SizeProvider() {
++                @Override
++                public int dividerSize(int position, RecyclerView parent) {
++                    return DEFAULT_SIZE;
++                }
++            };
++        }
++    }
++
++    @Override
++    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
++        RecyclerView.Adapter adapter = parent.getAdapter();
++        if (adapter == null) {
++            return;
++        }
++
++        int itemCount = adapter.getItemCount();
++        int lastDividerOffset = getLastDividerOffset(parent);
++        int validChildCount = parent.getChildCount();
++        int lastChildPosition = -1;
++        for (int i = 0; i < validChildCount; i++) {
++            View child = parent.getChildAt(i);
++            int childPosition = parent.getChildAdapterPosition(child);
++
++            if (childPosition < lastChildPosition) {
++                // Avoid remaining divider when animation starts
++                continue;
++            }
++            lastChildPosition = childPosition;
++
++            if (!mShowLastDivider && childPosition >= itemCount - lastDividerOffset) {
++                // Don't draw divider for last line if mShowLastDivider = false
++                continue;
++            }
++
++            if (wasDividerAlreadyDrawn(childPosition, parent)) {
++                // No need to draw divider again as it was drawn already by previous column
++                continue;
++            }
++
++            int groupIndex = getGroupIndex(childPosition, parent);
++            if (mVisibilityProvider.shouldHideDivider(groupIndex, parent)) {
++                continue;
++            }
++
++            Rect bounds = getDividerBound(groupIndex, parent, child);
++            switch (mDividerType) {
++                case DRAWABLE:
++                    Drawable drawable = mDrawableProvider.drawableProvider(groupIndex, parent);
++                    drawable.setBounds(bounds);
++                    drawable.draw(c);
++                    break;
++                case PAINT:
++                    mPaint = mPaintProvider.dividerPaint(groupIndex, parent);
++                    c.drawLine(bounds.left, bounds.top, bounds.right, bounds.bottom, mPaint);
++                    break;
++                case COLOR:
++                    mPaint.setColor(mColorProvider.dividerColor(groupIndex, parent));
++                    mPaint.setStrokeWidth(mSizeProvider.dividerSize(groupIndex, parent));
++                    c.drawLine(bounds.left, bounds.top, bounds.right, bounds.bottom, mPaint);
++                    break;
++            }
++        }
++    }
++
++    @Override
++    public void getItemOffsets(Rect rect, View v, RecyclerView parent, RecyclerView.State state) {
++        int position = parent.getChildAdapterPosition(v);
++        int itemCount = parent.getAdapter().getItemCount();
++        int lastDividerOffset = getLastDividerOffset(parent);
++        if (!mShowLastDivider && position >= itemCount - lastDividerOffset) {
++            // Don't set item offset for last line if mShowLastDivider = false
++            return;
++        }
++
++        int groupIndex = getGroupIndex(position, parent);
++        setItemOffsets(rect, groupIndex, parent);
++    }
++
++    /**
++     * In the case mShowLastDivider = false,
++     * Returns offset for how many views we don't have to draw a divider for,
++     * for LinearLayoutManager it is as simple as not drawing the last child divider,
++     * but for a GridLayoutManager it needs to take the span count for the last items into account
++     * until we use the span count configured for the grid.
++     *
++     * @param parent RecyclerView
++     * @return offset for how many views we don't have to draw a divider or 1 if its a
++     * LinearLayoutManager
++     */
++    private int getLastDividerOffset(RecyclerView parent) {
++        if (parent.getLayoutManager() instanceof GridLayoutManager) {
++            GridLayoutManager layoutManager = (GridLayoutManager) parent.getLayoutManager();
++            GridLayoutManager.SpanSizeLookup spanSizeLookup = layoutManager.getSpanSizeLookup();
++            int spanCount = layoutManager.getSpanCount();
++            int itemCount = parent.getAdapter().getItemCount();
++            for (int i = itemCount - 1; i >= 0; i--) {
++                if (spanSizeLookup.getSpanIndex(i, spanCount) == 0) {
++                    return itemCount - i;
++                }
++            }
++        }
++
++        return 1;
++    }
++
++    /**
++     * Determines whether divider was already drawn for the row the item is in,
++     * effectively only makes sense for a grid
++     *
++     * @param position current view position to draw divider
++     * @param parent   RecyclerView
++     * @return true if the divider can be skipped as it is in the same row as the previous one.
++     */
++    private boolean wasDividerAlreadyDrawn(int position, RecyclerView parent) {
++        if (parent.getLayoutManager() instanceof GridLayoutManager) {
++            GridLayoutManager layoutManager = (GridLayoutManager) parent.getLayoutManager();
++            GridLayoutManager.SpanSizeLookup spanSizeLookup = layoutManager.getSpanSizeLookup();
++            int spanCount = layoutManager.getSpanCount();
++            return spanSizeLookup.getSpanIndex(position, spanCount) > 0;
++        }
++
++        return false;
++    }
++
++    /**
++     * Returns a group index for GridLayoutManager.
++     * for LinearLayoutManager, always returns position.
++     *
++     * @param position current view position to draw divider
++     * @param parent   RecyclerView
++     * @return group index of items
++     */
++    private int getGroupIndex(int position, RecyclerView parent) {
++        if (parent.getLayoutManager() instanceof GridLayoutManager) {
++            GridLayoutManager layoutManager = (GridLayoutManager) parent.getLayoutManager();
++            GridLayoutManager.SpanSizeLookup spanSizeLookup = layoutManager.getSpanSizeLookup();
++            int spanCount = layoutManager.getSpanCount();
++            return spanSizeLookup.getSpanGroupIndex(position, spanCount);
++        }
++
++        return position;
++    }
++
++    protected abstract Rect getDividerBound(int position, RecyclerView parent, View child);
++
++    protected abstract void setItemOffsets(Rect outRect, int position, RecyclerView parent);
++
++    /**
++     * Interface for controlling divider visibility
++     */
++    public interface VisibilityProvider {
++
++        /**
++         * Returns true if divider should be hidden.
++         *
++         * @param position Divider position (or group index for GridLayoutManager)
++         * @param parent   RecyclerView
++         * @return True if the divider at position should be hidden
++         */
++        boolean shouldHideDivider(int position, RecyclerView parent);
++    }
++
++    /**
++     * Interface for controlling paint instance for divider drawing
++     */
++    public interface PaintProvider {
++
++        /**
++         * Returns {@link Paint} for divider
++         *
++         * @param position Divider position (or group index for GridLayoutManager)
++         * @param parent   RecyclerView
++         * @return Paint instance
++         */
++        Paint dividerPaint(int position, RecyclerView parent);
++    }
++
++    /**
++     * Interface for controlling divider color
++     */
++    public interface ColorProvider {
++
++        /**
++         * Returns {@link android.graphics.Color} value of divider
++         *
++         * @param position Divider position (or group index for GridLayoutManager)
++         * @param parent   RecyclerView
++         * @return Color value
++         */
++        int dividerColor(int position, RecyclerView parent);
++    }
++
++    /**
++     * Interface for controlling drawable object for divider drawing
++     */
++    public interface DrawableProvider {
++
++        /**
++         * Returns drawable instance for divider
++         *
++         * @param position Divider position (or group index for GridLayoutManager)
++         * @param parent   RecyclerView
++         * @return Drawable instance
++         */
++        Drawable drawableProvider(int position, RecyclerView parent);
++    }
++
++    /**
++     * Interface for controlling divider size
++     */
++    public interface SizeProvider {
++
++        /**
++         * Returns size value of divider.
++         * Height for horizontal divider, width for vertical divider
++         *
++         * @param position Divider position (or group index for GridLayoutManager)
++         * @param parent   RecyclerView
++         * @return Size of divider
++         */
++        int dividerSize(int position, RecyclerView parent);
++    }
++
++    public static class Builder<T extends Builder> {
++
++        private Context mContext;
++        protected Resources mResources;
++        private PaintProvider mPaintProvider;
++        private ColorProvider mColorProvider;
++        private DrawableProvider mDrawableProvider;
++        private SizeProvider mSizeProvider;
++        private VisibilityProvider mVisibilityProvider = new VisibilityProvider() {
++            @Override
++            public boolean shouldHideDivider(int position, RecyclerView parent) {
++                return false;
++            }
++        };
++        private boolean mShowLastDivider = false;
++        private boolean mPositionInsideItem = false;
++
++        public Builder(Context context) {
++            mContext = context;
++            mResources = context.getResources();
++        }
++
++        public T paint(final Paint paint) {
++            return paintProvider(new PaintProvider() {
++                @Override
++                public Paint dividerPaint(int position, RecyclerView parent) {
++                    return paint;
++                }
++            });
++        }
++
++        public T paintProvider(PaintProvider provider) {
++            mPaintProvider = provider;
++            return (T) this;
++        }
++
++        public T color(final int color) {
++            return colorProvider(new ColorProvider() {
++                @Override
++                public int dividerColor(int position, RecyclerView parent) {
++                    return color;
++                }
++            });
++        }
++
++        public T colorResId(@ColorRes int colorId) {
++            return color(ContextCompat.getColor(mContext, colorId));
++        }
++
++        public T colorProvider(ColorProvider provider) {
++            mColorProvider = provider;
++            return (T) this;
++        }
++
++        public T drawable(@DrawableRes int id) {
++            return drawable(ContextCompat.getDrawable(mContext, id));
++        }
++
++        public T drawable(final Drawable drawable) {
++            return drawableProvider(new DrawableProvider() {
++                @Override
++                public Drawable drawableProvider(int position, RecyclerView parent) {
++                    return drawable;
++                }
++            });
++        }
++
++        public T drawableProvider(DrawableProvider provider) {
++            mDrawableProvider = provider;
++            return (T) this;
++        }
++
++        public T size(final int size) {
++            return sizeProvider(new SizeProvider() {
++                @Override
++                public int dividerSize(int position, RecyclerView parent) {
++                    return size;
++                }
++            });
++        }
++
++        public T sizeResId(@DimenRes int sizeId) {
++            return size(mResources.getDimensionPixelSize(sizeId));
++        }
++
++        public T sizeProvider(SizeProvider provider) {
++            mSizeProvider = provider;
++            return (T) this;
++        }
++
++        public T visibilityProvider(VisibilityProvider provider) {
++            mVisibilityProvider = provider;
++            return (T) this;
++        }
++
++        public T showLastDivider() {
++            mShowLastDivider = true;
++            return (T) this;
++        }
++
++        public T positionInsideItem(boolean positionInsideItem) {
++            mPositionInsideItem = positionInsideItem;
++            return (T) this;
++        }
++
++        protected void checkBuilderParams() {
++            if (mPaintProvider != null) {
++                if (mColorProvider != null) {
++                    throw new IllegalArgumentException(
++                            "Use setColor method of Paint class to specify line color. Do not provider ColorProvider if you set PaintProvider.");
++                }
++                if (mSizeProvider != null) {
++                    throw new IllegalArgumentException(
++                            "Use setStrokeWidth method of Paint class to specify line size. Do not provider SizeProvider if you set PaintProvider.");
++                }
++            }
++        }
++    }
++}
+\ No newline at end of file
+Index: sumile/src/test/java/net/sumile/sumile/ExampleUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/test/java/net/sumile/sumile/ExampleUnitTest.java	(revision )
++++ sumile/src/test/java/net/sumile/sumile/ExampleUnitTest.java	(revision )
+@@ -0,0 +1,15 @@
++package net.sumile.sumile;
++
++import org.junit.Test;
++
++import static org.junit.Assert.*;
++
++/**
++ * To work on unit tests, switch the Test Artifact in the Build Variants view.
++ */
++public class ExampleUnitTest {
++    @Test
++    public void addition_isCorrect() throws Exception {
++        assertEquals(4, 2 + 2);
++    }
++}
+\ No newline at end of file
+Index: sumile/src/main/java/net/sumile/sumile/base/BaseActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/base/BaseActivity.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/base/BaseActivity.java	(revision )
+@@ -0,0 +1,77 @@
++package net.sumile.sumile.base;
++
++import android.app.Activity;
++import android.content.Context;
++import android.os.Bundle;
++import android.view.LayoutInflater;
++
++/**
++ * Created by sumile on 2015/9/14.
++ * 本程序版权归车联集团
++ */
++public class BaseActivity extends Activity {
++    public Context mContext;
++    public Activity mActivity;
++
++    public void initView() {
++
++    }
++
++    public void initAction() {
++
++    }
++
++    public void initData() {
++
++    }
++
++    public void initShow() {
++
++    }
++
++    public LayoutInflater mLayoutInflater;
++
++    @Override
++    protected void onCreate(Bundle arg0) {
++        super.onCreate(arg0);
++        mLayoutInflater = LayoutInflater.from(this);
++        mContext = this;
++        mActivity = this;
++    }
++
++    @Override
++    protected void onStart() {
++        super.onStart();
++    }
++
++    @Override
++    protected void onResume() {
++        super.onResume();
++        AppManager.getAppManager().addActivity(this);
++    }
++
++    @Override
++    protected void onPause() {
++        super.onPause();
++    }
++
++    @Override
++    protected void onStop() {
++        super.onStop();
++    }
++
++    @Override
++    protected void onDestroy() {
++        super.onDestroy();
++    }
++
++    @Override
++    protected void onSaveInstanceState(Bundle outState) {
++        super.onSaveInstanceState(outState);
++    }
++
++    @Override
++    protected void onRestart() {
++        super.onRestart();
++    }
++}
+Index: sumile/src/main/res/layout/content_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/layout/content_main.xml	(revision )
++++ sumile/src/main/res/layout/content_main.xml	(revision )
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:paddingBottom="@dimen/activity_vertical_margin"
++    android:paddingLeft="@dimen/activity_horizontal_margin"
++    android:paddingRight="@dimen/activity_horizontal_margin"
++    android:paddingTop="@dimen/activity_vertical_margin"
++    app:layout_behavior="@string/appbar_scrolling_view_behavior"
++    tools:context="net.sumile.sumile.MainActivity"
++    tools:showIn="@layout/activity_main">
++
++    <TextView
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Hello World!" />
++</RelativeLayout>
+Index: sumile/src/main/res/layout/dialog_layout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/layout/dialog_layout.xml	(revision )
++++ sumile/src/main/res/layout/dialog_layout.xml	(revision )
+@@ -0,0 +1,55 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content">
++
++    <RelativeLayout
++        android:id="@+id/linearLayout"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:minHeight="50dp">
++
++        <TextView
++            android:id="@+id/textView"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_alignParentRight="false"
++            android:layout_centerVertical="true"
++            android:layout_marginLeft="15dip"
++            android:text="已选择0个联系人"
++            android:textColor="#a63535" />
++
++
++        <CheckBox
++            android:id="@+id/allChecked"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_alignParentRight="true"
++            android:layout_centerVertical="true"
++            android:layout_marginRight="10dip"
++            android:text="全选" />
++
++        <TextView
++            android:id="@+id/fanxuan"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_alignParentRight="false"
++            android:layout_centerVertical="true"
++            android:layout_marginLeft="15dip"
++            android:layout_marginRight="15dip"
++            android:layout_toLeftOf="@id/allChecked"
++            android:gravity="center_vertical"
++            android:text="反选"
++            android:textColor="#a63535" />
++    </RelativeLayout>
++
++    <android.support.v7.widget.RecyclerView
++        android:id="@+id/listView"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/linearLayout"
++        android:divider="#232323"
++        android:dividerHeight="10dp" />
++
++
++</RelativeLayout>
+\ No newline at end of file
+Index: sumile/src/main/java/net/sumile/sumile/data/MainDataProvider.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/data/MainDataProvider.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/data/MainDataProvider.java	(revision )
+@@ -0,0 +1,21 @@
++package net.sumile.sumile.data;
++
++import net.sumile.sumile.activity.ContactChooserActivity;
++import net.sumile.sumile.bean.MainData;
++
++import java.util.ArrayList;
++
++/**
++ * Created by Administrator on 2016/4/28.
++ */
++public class MainDataProvider {
++    public static ArrayList<MainData> getMainDatas() {
++        ArrayList<MainData> mData = new ArrayList<>();
++        mData.add(getMainData("获取联系人信息", "多种获取联系人信息的方法，有的可以获取手机卡的，有的不能获取手机卡的，还有一种是我写的，可以多选获取选中联系人的", "2016年5月8日", ContactChooserActivity.class));
++        return mData;
++    }
++
++    private static MainData getMainData(String title, String desc, String date, Class clz) {
++        return new MainData(title, desc, date, clz);
++    }
++}
+Index: sumile/src/main/java/net/sumile/sumile/base/Constants.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/base/Constants.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/base/Constants.java	(revision )
+@@ -0,0 +1,8 @@
++package net.sumile.sumile.base;
++
++/**
++ * Created by Administrator on 2016/4/28.
++ */
++public class Constants {
++    public static final String BLOGURL = "http://sumile.net";
++}
+Index: sumile/src/main/java/net/sumile/sumile/base/BaseListActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/base/BaseListActivity.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/base/BaseListActivity.java	(revision )
+@@ -0,0 +1,123 @@
++package net.sumile.sumile.base;
++
++import android.os.Bundle;
++import android.support.v4.content.ContextCompat;
++import android.support.v7.widget.DefaultItemAnimator;
++import android.support.v7.widget.LinearLayoutManager;
++import android.support.v7.widget.RecyclerView;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.CheckBox;
++import android.widget.TextView;
++
++import net.sumile.sumile.R;
++import net.sumile.sumile.bean.DescribeAndCode;
++import net.sumile.sumile.view.Header;
++import net.sumile.sumile.view.HorizontalDividerItemDecoration;
++
++import java.util.ArrayList;
++
++/**
++ * Created by Administrator on 2016/5/8.
++ */
++public abstract class BaseListActivity extends BaseActivity {
++    private RecyclerView mRecycleView;
++
++    @Override
++    protected void onCreate(Bundle arg0) {
++        super.onCreate(arg0);
++        if (ifUsingDefault()) {
++            initView();
++        } else {
++        }
++        mHeader = (Header) findViewById(R.id.header);
++    }
++
++    private Header mHeader;
++
++    public abstract boolean ifUsingDefault();
++
++    @Override
++    public void initView() {
++        setContentView(R.layout.listlayout);
++        mRecycleView = (RecyclerView) findViewById(R.id.recycleView);
++
++    }
++
++    public void initDefaultRecycleView(ArrayList<DescribeAndCode> strArraylist, DefaultRecycleViewInterface listener) {
++        RecyclerView.Adapter adapter = new DefaultRecycleViewAdapter(strArraylist, listener);
++        mRecycleView.setLayoutManager(new LinearLayoutManager(this));
++        mRecycleView.setAdapter(adapter);
++        mRecycleView.setItemAnimator(new DefaultItemAnimator());
++        mRecycleView.addItemDecoration(new HorizontalDividerItemDecoration.Builder(this)
++                .color(ContextCompat.getColor(mContext, R.color.baseColor))
++                .build());
++    }
++
++    class DefaultRecycleViewAdapter extends RecyclerView.Adapter<DefaultRecycleViewHolder> {
++        private ArrayList<DescribeAndCode> strs;
++        private DefaultRecycleViewInterface listener;
++
++        public DefaultRecycleViewAdapter(ArrayList<DescribeAndCode> strs, DefaultRecycleViewInterface listener) {
++            if (strs == null) {
++                strs = new ArrayList<>();
++            }
++            this.strs = strs;
++            if (listener != null) {
++                this.listener = listener;
++            }
++        }
++
++        @Override
++        public DefaultRecycleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
++            DefaultRecycleViewHolder holder = new DefaultRecycleViewHolder(LayoutInflater.from(BaseListActivity.this).inflate(R.layout.list_textview, parent, false));
++            return holder;
++        }
++
++        @Override
++        public void onBindViewHolder(DefaultRecycleViewHolder holder, final int position) {
++            holder.tv.setText(strs.get(position).getDescribe());
++            if (listener != null) {
++                mHeader.setData(listener.setHeaderTitle(), listener.setHeaderGitHubUrl());
++                holder.tv.setOnClickListener(new View.OnClickListener() {
++                    @Override
++                    public void onClick(View v) {
++                        listener.onItemClick(v, position);
++                    }
++                });
++                holder.tv.setOnLongClickListener(new View.OnLongClickListener() {
++                    @Override
++                    public boolean onLongClick(View v) {
++                        listener.onLongClickToShowCode(v, position);
++                        return true;
++                    }
++                });
++            }
++        }
++
++        @Override
++        public int getItemCount() {
++            return strs.size();
++        }
++    }
++
++    public interface DefaultRecycleViewInterface {
++        void onItemClick(View tv, int position);
++
++        void onLongClickToShowCode(View tv, int position);
++
++        String setHeaderTitle();
++
++        String setHeaderGitHubUrl();
++    }
++
++    class DefaultRecycleViewHolder extends RecyclerView.ViewHolder {
++        private TextView tv;
++
++        public DefaultRecycleViewHolder(View itemView) {
++            super(itemView);
++            tv = (TextView) itemView.findViewById(R.id.id_listTextView);
++        }
++    }
++}
+Index: sumile/src/main/java/net/sumile/sumile/bean/DescribeAndCode.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/bean/DescribeAndCode.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/bean/DescribeAndCode.java	(revision )
+@@ -0,0 +1,30 @@
++package net.sumile.sumile.bean;
++
++/**
++ * Created by Administrator on 2016/5/8.
++ */
++public class DescribeAndCode {
++    private String describe;
++    private String code;
++
++    public DescribeAndCode(String describe, String code) {
++        this.describe = describe;
++        this.code = code;
++    }
++
++    public String getDescribe() {
++        return describe;
++    }
++
++    public void setDescribe(String describe) {
++        this.describe = describe;
++    }
++
++    public String getCode() {
++        return code;
++    }
++
++    public void setCode(String code) {
++        this.code = code;
++    }
++}
+Index: sumile/src/main/java/net/sumile/sumile/view/VerticalDividerItemDecoration.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/view/VerticalDividerItemDecoration.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/view/VerticalDividerItemDecoration.java	(revision )
+@@ -0,0 +1,157 @@
++package net.sumile.sumile.view;
++
++import android.content.Context;
++import android.graphics.Rect;
++import android.graphics.drawable.Drawable;
++import android.support.annotation.DimenRes;
++import android.support.v4.view.ViewCompat;
++import android.support.v7.widget.RecyclerView;
++import android.view.View;
++
++/**
++ * Created by yqritc on 2015/01/15.
++ */
++public class VerticalDividerItemDecoration extends FlexibleDividerDecoration {
++
++    private MarginProvider mMarginProvider;
++
++    protected VerticalDividerItemDecoration(Builder builder) {
++        super(builder);
++        mMarginProvider = builder.mMarginProvider;
++    }
++
++    @Override
++    protected Rect getDividerBound(int position, RecyclerView parent, View child) {
++        Rect bounds = new Rect(0, 0, 0, 0);
++        int transitionX = (int) ViewCompat.getTranslationX(child);
++        int transitionY = (int) ViewCompat.getTranslationY(child);
++        RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
++        bounds.top = parent.getPaddingTop() +
++                mMarginProvider.dividerTopMargin(position, parent) + transitionY;
++        bounds.bottom = parent.getHeight() - parent.getPaddingBottom() -
++                mMarginProvider.dividerBottomMargin(position, parent) + transitionY;
++
++        int dividerSize = getDividerSize(position, parent);
++        if (mDividerType == DividerType.DRAWABLE) {
++            // set left and right position of divider
++            if (mPositionInsideItem) {
++                bounds.right = child.getRight() + params.leftMargin + transitionX;
++                bounds.left = bounds.right - dividerSize;
++            } else {
++                bounds.left = child.getRight() + params.leftMargin + transitionX;
++                bounds.right = bounds.left + dividerSize;
++            }
++        } else {
++            // set center point of divider
++            if (mPositionInsideItem) {
++                bounds.left = child.getRight() + params.leftMargin - dividerSize / 2 + transitionX;
++            } else {
++                bounds.left = child.getRight() + params.leftMargin + dividerSize / 2 + transitionX;
++            }
++            bounds.right = bounds.left;
++        }
++
++        return bounds;
++    }
++
++    @Override
++    protected void setItemOffsets(Rect outRect, int position, RecyclerView parent) {
++        if (mPositionInsideItem) {
++            outRect.set(0, 0, 0, 0);
++        } else {
++            outRect.set(0, 0, getDividerSize(position, parent), 0);
++        }
++    }
++
++    private int getDividerSize(int position, RecyclerView parent) {
++        if (mPaintProvider != null) {
++            return (int) mPaintProvider.dividerPaint(position, parent).getStrokeWidth();
++        } else if (mSizeProvider != null) {
++            return mSizeProvider.dividerSize(position, parent);
++        } else if (mDrawableProvider != null) {
++            Drawable drawable = mDrawableProvider.drawableProvider(position, parent);
++            return drawable.getIntrinsicWidth();
++        }
++        throw new RuntimeException("failed to get size");
++    }
++
++    /**
++     * Interface for controlling divider margin
++     */
++    public interface MarginProvider {
++
++        /**
++         * Returns top margin of divider.
++         *
++         * @param position Divider position (or group index for GridLayoutManager)
++         * @param parent   RecyclerView
++         * @return top margin
++         */
++        int dividerTopMargin(int position, RecyclerView parent);
++
++        /**
++         * Returns bottom margin of divider.
++         *
++         * @param position Divider position (or group index for GridLayoutManager)
++         * @param parent   RecyclerView
++         * @return bottom margin
++         */
++        int dividerBottomMargin(int position, RecyclerView parent);
++    }
++
++    public static class Builder extends FlexibleDividerDecoration.Builder<Builder> {
++
++        private MarginProvider mMarginProvider = new MarginProvider() {
++            @Override
++            public int dividerTopMargin(int position, RecyclerView parent) {
++                return 0;
++            }
++
++            @Override
++            public int dividerBottomMargin(int position, RecyclerView parent) {
++                return 0;
++            }
++        };
++
++        public Builder(Context context) {
++            super(context);
++        }
++
++        public Builder margin(final int topMargin, final int bottomMargin) {
++            return marginProvider(new MarginProvider() {
++                @Override
++                public int dividerTopMargin(int position, RecyclerView parent) {
++                    return topMargin;
++                }
++
++                @Override
++                public int dividerBottomMargin(int position, RecyclerView parent) {
++                    return bottomMargin;
++                }
++            });
++        }
++
++        public Builder margin(int verticalMargin) {
++            return margin(verticalMargin, verticalMargin);
++        }
++
++        public Builder marginResId(@DimenRes int topMarginId, @DimenRes int bottomMarginId) {
++            return margin(mResources.getDimensionPixelSize(topMarginId),
++                    mResources.getDimensionPixelSize(bottomMarginId));
++        }
++
++        public Builder marginResId(@DimenRes int verticalMarginId) {
++            return marginResId(verticalMarginId, verticalMarginId);
++        }
++
++        public Builder marginProvider(MarginProvider provider) {
++            mMarginProvider = provider;
++            return this;
++        }
++
++        public VerticalDividerItemDecoration build() {
++            checkBuilderParams();
++            return new VerticalDividerItemDecoration(this);
++        }
++    }
++}
+\ No newline at end of file
+Index: sumile/src/main/res/drawable/list_divider.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/drawable/list_divider.xml	(revision )
++++ sumile/src/main/res/drawable/list_divider.xml	(revision )
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
++    <stroke android:color="@color/white"/>
++    <size android:height="4dp"/>
++</shape>
+\ No newline at end of file
+Index: sumile/src/main/java/net/sumile/sumile/activity/ContactChooserActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/activity/ContactChooserActivity.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/activity/ContactChooserActivity.java	(revision )
+@@ -0,0 +1,162 @@
++package net.sumile.sumile.activity;
++
++import android.content.Intent;
++import android.database.Cursor;
++import android.net.Uri;
++import android.os.Bundle;
++import android.provider.ContactsContract;
++import android.text.TextUtils;
++import android.view.View;
++import android.widget.TextView;
++
++import net.sumile.sumile.base.BaseActivity;
++import net.sumile.sumile.base.BaseListActivity;
++import net.sumile.sumile.bean.DescribeAndCode;
++import net.sumile.sumile.util.ContactsChooserUtil;
++import net.sumile.sumile.util.DialogUtil;
++import net.sumile.sumile.util.ToastUtil;
++
++import java.util.ArrayList;
++
++/**
++ * Created by sumile on 2016/5/8.
++ */
++public class ContactChooserActivity extends BaseListActivity {
++    private ArrayList<DescribeAndCode> data = new ArrayList<DescribeAndCode>();
++
++    @Override
++    public boolean ifUsingDefault() {
++        return true;
++    }
++
++    @Override
++    protected void onCreate(Bundle arg0) {
++        super.onCreate(arg0);
++        data.add(new DescribeAndCode("获取联系人信息:方法1", "Intent localIntent = new Intent(\"android.intent.action.PICK\");\n" +
++                "localIntent.setType(\"vnd.android.cursor.dir/phone\");\n" +
++                "mActivity.startActivityForResult(localIntent, REQUEST_0);"));
++        data.add(new DescribeAndCode("获取联系人信息:方法2", "Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);\n" +
++                "startActivityForResult(intent, REQUEST_1);"));
++        data.add(new DescribeAndCode("获取联系人信息:方法3", "代码太多了，查看util下的ContactsChooserUtil"));
++        initDefaultRecycleView(data, new DefaultRecycleViewInterface() {
++            @Override
++            public void onItemClick(View tv, int position) {
++                switch (position) {
++                    case 0:
++                        getUserInfo1();
++                        break;
++                    case 1:
++                        getUserInfo2();
++                        break;
++                    case 2:
++                        getUserInfo3();
++                        break;
++                }
++            }
++
++
++            @Override
++            public void onLongClickToShowCode(View tv, int position) {
++                DialogUtil.showTextDialog(mContext, data.get(position).getCode());
++            }
++
++            @Override
++            public String setHeaderTitle() {
++                return "联系人信息获取";
++            }
++
++            @Override
++            public String setHeaderGitHubUrl() {
++                return null;
++            }
++
++        });
++    }
++
++    String content = "";
++
++    private void getUserInfo3() {
++        content = "";
++        new ContactsChooserUtil(mContext, ContactChooserActivity.this, new ContactsChooserUtil.ContactsChooserImpl() {
++            @Override
++            public void onContactsChoosed(ArrayList<String> mContactsNames, ArrayList<String> mContactsNumbers) {
++                for (int i = 0; i < mContactsNames.size(); i++) {
++                    content += "姓名:" + mContactsNames.get(i) + "   电话:" + mContactsNumbers.get(i) + "\n";
++                }
++                DialogUtil.showTextDialog(mContext, content.toString());
++            }
++        });
++    }
++
++    private void getUserInfo2() {
++        Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
++        startActivityForResult(intent, REQUEST_1);
++    }
++
++    private void getUserInfo1() {
++        Intent localIntent = new Intent("android.intent.action.PICK");
++        localIntent.setType("vnd.android.cursor.dir/phone");
++        mActivity.startActivityForResult(localIntent, REQUEST_0);
++    }
++
++    private static final int REQUEST_0 = 0;
++    private static final int REQUEST_1 = 1;
++    String disPlayName;
++    String phoneNumber;
++
++    protected void onActivityResult(int paramInt1, int resultCode, Intent paramIntent) {
++        if (paramIntent == null) {
++            return;
++        }
++        switch (paramInt1) {
++            case REQUEST_0:
++                if (resultCode == RESULT_OK) {
++                    Uri localUri = paramIntent.getData();
++                    if (localUri != null) {
++                        Cursor localCursor = getContentResolver().query(localUri, null, null, null, null);
++                        if (localCursor != null)
++                            while (true) {
++                                if (!localCursor.moveToNext()) {
++                                    DialogUtil.showTextDialog(mContext, this.disPlayName + "\n" + this.phoneNumber);
++                                    super.onActivityResult(paramInt1, resultCode, paramIntent);
++                                    return;
++                                }
++                                int i = localCursor.getColumnIndex("display_name");
++                                if (i >= 0) {
++                                    this.disPlayName = localCursor.getString(i);
++                                    int j = localCursor.getColumnIndex("data1");
++                                    if (j >= 0)
++                                        this.phoneNumber = localCursor.getString(j);
++                                }
++                            }
++                    }
++                }
++                break;
++            case REQUEST_1:
++                if (resultCode == RESULT_OK) {
++                    Uri uri = paramIntent.getData();
++                    Cursor cursor = getContentResolver().query(uri, null, null, null, null);
++                    cursor.moveToFirst();
++                    String contactName = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
++                    String number = getContactNumber(cursor);
++                    DialogUtil.showTextDialog(mContext, contactName + "\n" + number);
++                }
++                break;
++        }
++    }
++
++    private String getContactNumber(Cursor cursor) {
++        String phoneNumber = null;
++        int numberCount = cursor.getInt(cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
++        if (numberCount > 0) {
++            int contactID = cursor.getInt(cursor.getColumnIndex(ContactsContract.Contacts._ID));
++            Cursor phoneNumberCursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + contactID, null, null);
++            phoneNumberCursor.moveToFirst();
++            phoneNumber = phoneNumberCursor.getString(phoneNumberCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
++            phoneNumberCursor.close();
++            cursor.close();
++            return phoneNumber;
++        }
++        return phoneNumber;
++    }
++}
+Index: sumile/src/main/java/net/sumile/sumile/view/RecycleViewDivider.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/view/RecycleViewDivider.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/view/RecycleViewDivider.java	(revision )
+@@ -0,0 +1,129 @@
++package net.sumile.sumile.view;
++
++import android.content.Context;
++import android.content.res.TypedArray;
++import android.graphics.Canvas;
++import android.graphics.Paint;
++import android.graphics.Rect;
++import android.graphics.drawable.Drawable;
++import android.support.v4.content.ContextCompat;
++import android.support.v7.widget.LinearLayoutManager;
++import android.support.v7.widget.RecyclerView;
++import android.view.View;
++
++/**
++ * Created by Administrator on 2016/4/29.
++ */
++public class RecycleViewDivider extends RecyclerView.ItemDecoration {
++
++    private Paint mPaint;
++    private Drawable mDivider;
++    private int mDividerHeight = 2;//分割线高度，默认为1px
++    private int mOrientation;//列表的方向：LinearLayoutManager.VERTICAL或LinearLayoutManager.HORIZONTAL
++    private static final int[] ATTRS = new int[]{android.R.attr.listDivider};
++
++    /**
++     * 默认分割线：高度为2px，颜色为灰色
++     *
++     * @param context
++     * @param orientation 列表方向
++     */
++    public RecycleViewDivider(Context context, int orientation) {
++        if (orientation != LinearLayoutManager.VERTICAL && orientation != LinearLayoutManager.HORIZONTAL) {
++            throw new IllegalArgumentException("请输入正确的参数！");
++        }
++        mOrientation = orientation;
++
++        final TypedArray a = context.obtainStyledAttributes(ATTRS);
++        mDivider = a.getDrawable(0);
++        a.recycle();
++    }
++
++    /**
++     * 自定义分割线
++     *
++     * @param context
++     * @param orientation 列表方向
++     * @param drawableId  分割线图片
++     */
++    public RecycleViewDivider(Context context, int orientation, int drawableId) {
++        this(context, orientation);
++        mDivider = ContextCompat.getDrawable(context, drawableId);
++        mDividerHeight = mDivider.getIntrinsicHeight();
++    }
++
++    /**
++     * 自定义分割线
++     *
++     * @param context
++     * @param orientation   列表方向
++     * @param dividerHeight 分割线高度
++     * @param dividerColor  分割线颜色
++     */
++    public RecycleViewDivider(Context context, int orientation, int dividerHeight, int dividerColor) {
++        this(context, orientation);
++        mDividerHeight = dividerHeight;
++        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
++        mPaint.setColor(dividerColor);
++        mPaint.setStyle(Paint.Style.FILL);
++    }
++
++
++    //获取分割线尺寸
++    @Override
++    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
++        super.getItemOffsets(outRect, view, parent, state);
++        outRect.set(0, 0, 0, mDividerHeight);
++    }
++
++    //绘制分割线
++    @Override
++    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
++        super.onDraw(c, parent, state);
++        if (mOrientation == LinearLayoutManager.VERTICAL) {
++            drawVertical(c, parent);
++        } else {
++            drawHorizontal(c, parent);
++        }
++    }
++
++    //绘制横向 item 分割线
++    private void drawHorizontal(Canvas canvas, RecyclerView parent) {
++        final int left = parent.getPaddingLeft();
++        final int right = parent.getMeasuredWidth() - parent.getPaddingRight();
++        final int childSize = parent.getChildCount();
++        for (int i = 0; i < childSize; i++) {
++            final View child = parent.getChildAt(i);
++            RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) child.getLayoutParams();
++            final int top = child.getBottom() + layoutParams.bottomMargin;
++            final int bottom = top + mDividerHeight;
++            if (mDivider != null) {
++                mDivider.setBounds(left, top, right, bottom);
++                mDivider.draw(canvas);
++            }
++            if (mPaint != null) {
++                canvas.drawRect(left, top, right, bottom, mPaint);
++            }
++        }
++    }
++
++    //绘制纵向 item 分割线
++    private void drawVertical(Canvas canvas, RecyclerView parent) {
++        final int top = parent.getPaddingTop();
++        final int bottom = parent.getMeasuredHeight() - parent.getPaddingBottom();
++        final int childSize = parent.getChildCount();
++        for (int i = 0; i < childSize; i++) {
++            final View child = parent.getChildAt(i);
++            RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) child.getLayoutParams();
++            final int left = child.getRight() + layoutParams.rightMargin;
++            final int right = left + mDividerHeight;
++            if (mDivider != null) {
++                mDivider.setBounds(left, top, right, bottom);
++                mDivider.draw(canvas);
++            }
++            if (mPaint != null) {
++                canvas.drawRect(left, top, right, bottom, mPaint);
++            }
++        }
++    }
++}
+\ No newline at end of file
+Index: sumile/src/main/res/layout/listlayout.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/layout/listlayout.xml	(revision )
++++ sumile/src/main/res/layout/listlayout.xml	(revision )
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical">
++
++    <net.sumile.sumile.view.Header
++        android:id="@+id/header"
++        android:layout_width="match_parent"
++        android:layout_height="50dip"></net.sumile.sumile.view.Header>
++
++    <android.support.v7.widget.RecyclerView
++        android:id="@+id/recycleView"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:background="@color/baseColor"
++        android:divider="@drawable/list_divider">
++
++    </android.support.v7.widget.RecyclerView>
++</LinearLayout>
+\ No newline at end of file
+Index: sumile/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/values/colors.xml	(revision )
++++ sumile/src/main/res/values/colors.xml	(revision )
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <color name="colorPrimary">#3F51B5</color>
++    <color name="colorPrimaryDark">#303F9F</color>
++    <color name="colorAccent">#FF4081</color>
++    <color name="baseColor">#211f1f</color>
++    <color name="baseColorLight">#3d3b3b</color>
++    <color name="lineColor">#9e9999</color>
++    <color name="white">#ffffff</color>
++    <color name="contentTextColorWhite">#ffffff</color>
++    <color name="contentTextColor">#e2dddd</color>
++</resources>
+Index: sumile/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/AndroidManifest.xml	(revision )
++++ sumile/src/main/AndroidManifest.xml	(revision )
+@@ -0,0 +1,29 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="net.sumile.sumile">
++
++    <uses-permission android:name="android.permission.READ_CONTACTS" />
++    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
++    <uses-permission android:name="android.permission.SEND_SMS" />
++    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
++
++    <application
++        android:allowBackup="true"
++        android:icon="@mipmap/ic_launcher"
++        android:label="@string/app_name"
++        android:supportsRtl="true"
++        android:theme="@style/AppTheme">
++        <activity
++            android:name=".MainActivity"
++            android:label="@string/app_name">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++        <activity android:name=".activity.WebViewActivity" />
++        <activity android:name=".activity.ContactChooserActivity"></activity>
++    </application>
++
++</manifest>
+Index: sumile/src/main/res/layout/list_textview.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/layout/list_textview.xml	(revision )
++++ sumile/src/main/res/layout/list_textview.xml	(revision )
+@@ -0,0 +1,31 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:id="@+id/list_rootView"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:background="@color/baseColorLight"
++    android:orientation="vertical">
++
++    <ScrollView
++        android:layout_width="fill_parent"
++        android:layout_height="match_parent"
++        android:fillViewport="true">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent">
++
++            <TextView
++                android:id="@+id/id_listTextView"
++                android:layout_width="match_parent"
++                android:layout_height="match_parent"
++                android:layout_gravity="center"
++                android:gravity="center"
++                android:isScrollContainer="true"
++                android:padding="20dp"
++                android:text="New Text"
++                android:textColor="@color/contentTextColorWhite" />
++        </LinearLayout>
++    </ScrollView>
++
++</LinearLayout>
+\ No newline at end of file
+Index: sumile/src/main/java/net/sumile/sumile/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/MainActivity.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/MainActivity.java	(revision )
+@@ -0,0 +1,106 @@
++package net.sumile.sumile;
++
++import android.app.AlertDialog;
++import android.content.Context;
++import android.content.Intent;
++import android.content.res.Resources;
++import android.graphics.Color;
++import android.media.tv.TvContentRating;
++import android.os.Bundle;
++import android.support.v4.content.ContextCompat;
++import android.support.v7.widget.DefaultItemAnimator;
++import android.support.v7.widget.LinearLayoutManager;
++import android.support.v7.widget.RecyclerView;
++import android.view.View;
++import android.widget.ImageView;
++import android.widget.LinearLayout;
++import android.widget.TextView;
++import android.widget.Toast;
++
++import net.sumile.sumile.adapter.MainAdapter;
++import net.sumile.sumile.base.BaseActivity;
++import net.sumile.sumile.base.Constants;
++import net.sumile.sumile.bean.MainData;
++import net.sumile.sumile.data.MainDataProvider;
++import net.sumile.sumile.util.DialogUtil;
++import net.sumile.sumile.util.IntentHelper;
++import net.sumile.sumile.util.ToastUtil;
++import net.sumile.sumile.view.DividerItemDecoration;
++import net.sumile.sumile.view.HorizontalDividerItemDecoration;
++import net.sumile.sumile.view.RecycleViewDivider;
++import net.sumile.sumile.view.VerticalDividerItemDecoration;
++
++import java.util.ArrayList;
++
++public class MainActivity extends BaseActivity {
++    private ImageView logo;
++    private RecyclerView mRecycleView;
++    private Context mContext;
++    private MainAdapter mAdapter;
++    private TextView title;
++    private ArrayList<MainData> mData;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_main);
++        mContext = MainActivity.this;
++        initView();
++        initData();
++        initAction();
++        initShow();
++    }
++
++    @Override
++    public void initView() {
++        title = (TextView) findViewById(R.id.id_title);
++        logo = (ImageView) findViewById(R.id.id_github);
++        logo.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                IntentHelper.openInWebView(mContext, Constants.BLOGURL);
++            }
++        });
++        mRecycleView = (RecyclerView) findViewById(R.id.id_mainRecycleView);
++        LinearLayoutManager manager = new LinearLayoutManager(mContext);
++        manager.setOrientation(LinearLayoutManager.VERTICAL);
++        mRecycleView.setLayoutManager(manager);
++    }
++
++    @Override
++    public void initData() {
++        mData = MainDataProvider.getMainDatas();
++        mAdapter = new MainAdapter(mContext, mData);
++    }
++
++    @Override
++    public void initAction() {
++        mAdapter.setOnItemClickListener(new MainAdapter.OnItemClickListener() {
++
++            @Override
++            public void onItemClick(View v, int position) {
++                Intent intent = new Intent(mContext, mData.get(position).getClz());
++                mContext.startActivity(intent);
++            }
++        });
++
++        title.setOnLongClickListener(new View.OnLongClickListener() {
++            @Override
++            public boolean onLongClick(View v) {
++                ToastUtil.showShortToast(mContext, "热爱改变生活");
++                return true;
++            }
++        });
++    }
++
++    @Override
++    public void initShow() {
++        mRecycleView.setAdapter(mAdapter);
++        mRecycleView.setItemAnimator(new DefaultItemAnimator());
++        mRecycleView.addItemDecoration(new HorizontalDividerItemDecoration.Builder(this)
++                .color(ContextCompat.getColor(mContext, R.color.baseColor))
++                .build());
++    }
++
++
++}
+Index: sumile/src/main/java/net/sumile/sumile/adapter/MainAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/adapter/MainAdapter.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/adapter/MainAdapter.java	(revision )
+@@ -0,0 +1,78 @@
++package net.sumile.sumile.adapter;
++
++import android.content.Context;
++import android.support.v7.widget.RecyclerView;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.TextView;
++
++import net.sumile.sumile.R;
++import net.sumile.sumile.bean.MainData;
++
++import java.util.ArrayList;
++
++/**
++ * Created by Administrator on 2016/4/28.
++ */
++public class MainAdapter extends RecyclerView.Adapter<MyViewHolder> {
++    private Context mContext;
++    private ArrayList<MainData> mData = new ArrayList<>();
++    private OnItemClickListener mListener;
++
++    public MainAdapter(Context mContext, ArrayList<MainData> mData) {
++        this.mContext = mContext;
++        this.mData.addAll(mData);
++    }
++
++    @Override
++    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
++        View view = LayoutInflater.from(mContext).inflate(R.layout.item_main, parent, false);
++        MyViewHolder holder = new MyViewHolder(view);
++        return holder;
++    }
++
++    @Override
++    public void onBindViewHolder(MyViewHolder holder, final int position) {
++        if (mListener != null) {
++            holder.view.setOnClickListener(new View.OnClickListener() {
++                @Override
++                public void onClick(View v) {
++                    mListener.onItemClick(v, position);
++                }
++            });
++        }
++        MainData data = mData.get(position);
++        holder.title.setText(data.getTitle());
++        holder.desc.setText(data.getDesc());
++        holder.date.setText(data.getDate());
++    }
++
++    @Override
++    public int getItemCount() {
++        return mData.size();
++    }
++
++    public void setOnItemClickListener(OnItemClickListener listener) {
++        this.mListener = listener;
++    }
++
++    public interface OnItemClickListener {
++        void onItemClick(View v, int position);
++    }
++}
++
++class MyViewHolder extends RecyclerView.ViewHolder {
++    public TextView title;
++    public TextView desc;
++    public TextView date;
++    public View view;
++
++    public MyViewHolder(View view) {
++        super(view);
++        this.view = view;
++        title = (TextView) view.findViewById(R.id.id_contentTitle);
++        desc = (TextView) view.findViewById(R.id.id_contentDesc);
++        date = (TextView) view.findViewById(R.id.id_contentDate);
++    }
++}
+Index: sumile/src/main/res/values/styles.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/values/styles.xml	(revision )
++++ sumile/src/main/res/values/styles.xml	(revision )
+@@ -0,0 +1,20 @@
++<resources>
++
++    <!-- Base application theme. -->
++    <style name="AppTheme" parent="@android:style/Theme.Holo.Light.NoActionBar">
++        <!-- Customize your theme here. -->
++        <item name="colorPrimary">@color/colorPrimary</item>
++        <item name="colorPrimaryDark">@android:color/background_dark</item>
++        <item name="colorAccent">@color/colorAccent</item>
++    </style>
++
++    <style name="AppTheme.NoActionBar">
++        <item name="windowActionBar">false</item>
++        <item name="windowNoTitle">true</item>
++    </style>
++
++    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
++
++    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
++
++</resources>
+Index: sumile/src/main/java/net/sumile/sumile/base/AppManager.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/base/AppManager.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/base/AppManager.java	(revision )
+@@ -0,0 +1,104 @@
++package net.sumile.sumile.base;
++
++import java.util.Stack;
++
++import android.app.Activity;
++import android.app.ActivityManager;
++import android.content.Context;
++
++public class AppManager {
++    public static Activity context = null;
++    private static Stack<Activity> activityStack;
++    private static AppManager instance;
++
++    private AppManager() {
++    }
++
++    /**
++     * 单一实例
++     */
++    public static AppManager getAppManager() {
++        if (instance == null) {
++            synchronized (AppManager.class) {
++                if (instance == null) {
++                    instance = new AppManager();
++                }
++            }
++        }
++        return instance;
++    }
++
++    /**
++     * 添加Activity到堆栈
++     */
++    public void addActivity(Activity activity) {
++        if (activityStack == null) {
++            activityStack = new Stack<Activity>();
++        }
++        activityStack.add(activity);
++    }
++
++    /**
++     * 获取当前Activity（堆栈中最后一个压入的）
++     */
++    public Activity currentActivity() {
++        Activity activity = activityStack.lastElement();
++        return activity;
++    }
++
++    /**
++     * 结束当前Activity（堆栈中最后一个压入的）
++     */
++    public void finishActivity() {
++        Activity activity = activityStack.lastElement();
++        finishActivity(activity);
++    }
++
++    /**
++     * 结束指定的Activity
++     */
++    public void finishActivity(Activity activity) {
++        if (activity != null) {
++            activityStack.remove(activity);
++            activity.finish();
++            activity = null;
++        }
++    }
++
++    /**
++     * 结束指定类名的Activity
++     */
++    public void finishActivity(Class cls) {
++        for (Activity activity : activityStack) {
++            if (activity.getClass().equals(cls)) {
++                finishActivity(activity);
++            }
++        }
++    }
++
++    /**
++     * 结束所有Activity
++     */
++    public void finishAllActivity() {
++        for (int i = 0, size = activityStack.size(); i < size; i++) {
++            if (null != activityStack.get(i)) {
++                activityStack.get(i).finish();
++            }
++        }
++        activityStack.clear();
++    }
++
++    /**
++     * 退出应用程序
++     */
++    public void AppExit(Context context) {
++        try {
++            finishAllActivity();
++            ActivityManager activityMgr = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
++            activityMgr.restartPackage(context.getPackageName());
++            System.exit(0);
++        } catch (Exception e) {
++        }
++    }
++}
++
+Index: sumile/src/main/java/net/sumile/sumile/view/Header.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/view/Header.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/view/Header.java	(revision )
+@@ -0,0 +1,93 @@
++package net.sumile.sumile.view;
++
++import android.app.Activity;
++import android.content.Context;
++import android.content.Intent;
++import android.net.Uri;
++import android.text.TextUtils;
++import android.util.AttributeSet;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.ImageView;
++import android.widget.RelativeLayout;
++import android.widget.TextView;
++
++import net.sumile.sumile.R;
++import net.sumile.sumile.util.IntentHelper;
++
++/**
++ * Created by Administrator on 2016/4/28.
++ */
++public class Header extends RelativeLayout implements View.OnClickListener {
++    public Header(Context context) {
++        this(context, null);
++    }
++
++    public Header(Context context, AttributeSet attrs) {
++        this(context, attrs, 0);
++    }
++
++    public Header(Context context, AttributeSet attrs, int defStyleAttr) {
++        super(context, attrs, defStyleAttr);
++        initView(context);
++    }
++
++    private ImageView back;
++    private ImageView github;
++    private TextView title;
++    private Context mContext;
++    //values
++    private String mUrl = "";
++    private String mTitle = "";
++
++    private void initView(Context context) {
++        mContext = context;
++        View.inflate(context, R.layout.header, this);
++        back = (ImageView) findViewById(R.id.id_back);
++        github = (ImageView) findViewById(R.id.id_github);
++        title = (TextView) findViewById(R.id.id_title);
++        initAction();
++    }
++
++    public void setData(String mTitle, String mUrl) {
++        if (TextUtils.isEmpty(mTitle)) {
++            mTitle = "sumile";
++        }
++        this.mTitle = mTitle;
++        title.setText(mTitle);
++        if (TextUtils.isEmpty(mUrl)) {
++            github.setImageResource(R.drawable.newlogo_white);
++            this.mUrl = "http://sumile.net";
++        } else {
++            this.mUrl = mUrl;
++            if (mUrl.contains("sumile")) {
++                github.setImageResource(R.drawable.newlogo_white);
++            }
++        }
++    }
++
++    private void initAction() {
++        back.setOnClickListener(this);
++        github.setOnClickListener(this);
++    }
++
++    @Override
++    public void onClick(View v) {
++        switch (v.getId()) {
++            case R.id.id_back:
++                ((Activity) mContext).finish();
++                break;
++            case R.id.id_github:
++                IntentHelper.openInWebView(mContext, mUrl);
++                break;
++        }
++    }
++
++    public String getUrl() {
++        return mUrl;
++    }
++
++    public String getTitle() {
++        return mTitle;
++    }
++}
+Index: sumile/src/main/res/layout/item_dialog.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/layout/item_dialog.xml	(revision )
++++ sumile/src/main/res/layout/item_dialog.xml	(revision )
+@@ -0,0 +1,33 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:layout_margin="3dip"
++    android:gravity="center_vertical"
++    >
++
++    <TextView
++        android:layout_marginLeft="20dip"
++        android:id="@+id/id_tv_name"
++        android:layout_width="wrap_content"
++        android:gravity="center_vertical"
++        android:text="李三"
++        android:layout_height="30dp" />
++    <TextView
++        android:layout_below="@id/id_tv_name"
++        android:layout_marginLeft="20dip"
++        android:id="@+id/tele_number"
++        android:layout_width="wrap_content"
++        android:gravity="center_vertical"
++        android:text="18765983265"
++        android:layout_height="wrap_content" />
++    <CheckBox
++        android:id="@+id/checkBox"
++        android:layout_width="wrap_content"
++        android:layout_marginRight="5dip"
++        android:layout_alignParentRight="true"
++        android:layout_height="wrap_content"
++        android:layout_centerVertical="true"
++        android:gravity="center_vertical"
++        android:text="" />
++</RelativeLayout>
+\ No newline at end of file
+Index: sumile/src/main/java/net/sumile/sumile/view/DividerItemDecoration.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/view/DividerItemDecoration.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/view/DividerItemDecoration.java	(revision )
+@@ -0,0 +1,92 @@
++package net.sumile.sumile.view;
++
++import android.content.Context;
++import android.content.res.TypedArray;
++import android.graphics.Canvas;
++import android.graphics.Rect;
++import android.graphics.drawable.Drawable;
++import android.support.v7.widget.LinearLayoutManager;
++import android.support.v7.widget.RecyclerView;
++import android.view.View;
++
++/**
++ * Created by Administrator on 2016/4/29.
++ */
++public class DividerItemDecoration extends RecyclerView.ItemDecoration {
++
++    private static final int[] ATTRS = new int[]{
++            android.R.attr.listDivider
++    };
++
++    public static final int HORIZONTAL_LIST = LinearLayoutManager.HORIZONTAL;
++
++    public static final int VERTICAL_LIST = LinearLayoutManager.VERTICAL;
++
++    private Drawable mDivider;
++
++    private int mOrientation;
++
++    public DividerItemDecoration(Context context, int orientation) {
++        final TypedArray a = context.obtainStyledAttributes(ATTRS);
++        mDivider = a.getDrawable(0);
++        a.recycle();
++        setOrientation(orientation);
++    }
++
++    public void setOrientation(int orientation) {
++        if (orientation != HORIZONTAL_LIST && orientation != VERTICAL_LIST) {
++            throw new IllegalArgumentException("invalid orientation");
++        }
++        mOrientation = orientation;
++    }
++
++    @Override
++    public void onDraw(Canvas c, RecyclerView parent) {
++        if (mOrientation == VERTICAL_LIST) {
++            drawVertical(c, parent);
++        } else {
++            drawHorizontal(c, parent);
++        }
++    }
++
++    public void drawVertical(Canvas c, RecyclerView parent) {
++        final int left = parent.getPaddingLeft();
++        final int right = parent.getWidth() - parent.getPaddingRight();
++
++        final int childCount = parent.getChildCount();
++        for (int i = 0; i < childCount; i++) {
++            final View child = parent.getChildAt(i);
++            final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
++                    .getLayoutParams();
++            final int top = child.getBottom() + params.bottomMargin;
++            final int bottom = top + mDivider.getIntrinsicHeight();
++            mDivider.setBounds(left, top, right, bottom);
++            mDivider.draw(c);
++        }
++    }
++
++    public void drawHorizontal(Canvas c, RecyclerView parent) {
++        final int top = parent.getPaddingTop();
++        final int bottom = parent.getHeight() - parent.getPaddingBottom();
++
++        final int childCount = parent.getChildCount();
++        for (int i = 0; i < childCount; i++) {
++            final View child = parent.getChildAt(i);
++            final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
++                    .getLayoutParams();
++            final int left = child.getRight() + params.rightMargin;
++            final int right = left + mDivider.getIntrinsicHeight();
++            mDivider.setBounds(left, top, right, bottom);
++            mDivider.draw(c);
++        }
++    }
++
++    @Override
++    public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
++        if (mOrientation == VERTICAL_LIST) {
++            outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
++        } else {
++            outRect.set(0, 0, mDivider.getIntrinsicWidth(), 0);
++        }
++    }
++}
+Index: sumile/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/.gitignore	(revision )
++++ sumile/.gitignore	(revision )
+@@ -0,0 +1,1 @@
++/build
+Index: sumile/src/main/res/layout/header.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/layout/header.xml	(revision )
++++ sumile/src/main/res/layout/header.xml	(revision )
+@@ -0,0 +1,32 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="50dp"
++    android:background="@color/baseColor">
++
++    <ImageView
++        android:id="@+id/id_back"
++        android:layout_width="50dp"
++        android:layout_height="48dp"
++        android:padding="12dp"
++        android:src="@drawable/back" />
++
++    <TextView
++        android:id="@+id/id_title"
++        android:layout_width="wrap_content"
++        android:layout_height="50dp"
++        android:layout_centerHorizontal="true"
++        android:layout_centerVertical="true"
++        android:gravity="center"
++        android:text="标题"
++        android:textColor="@color/white"
++        android:textSize="@dimen/bigTextSize" />
++
++    <ImageView
++        android:id="@+id/id_github"
++        android:layout_width="50dp"
++        android:layout_height="50dp"
++        android:layout_alignParentRight="true"
++        android:layout_marginRight="7dip"
++        android:src="@drawable/github_white" />
++</RelativeLayout>
+\ No newline at end of file
+Index: sumile/src/main/java/net/sumile/sumile/bean/MainData.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/bean/MainData.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/bean/MainData.java	(revision )
+@@ -0,0 +1,53 @@
++package net.sumile.sumile.bean;
++
++import java.io.Serializable;
++
++/**
++ * Created by Administrator on 2016/4/28.
++ */
++public class MainData implements Serializable {
++    private String title;
++    private String desc;
++    private String date;
++
++    private Class clz;
++
++    public MainData(String title, String desc, String date, Class clz) {
++        this.title = title;
++        this.desc = desc;
++        this.date = date;
++        this.clz = clz;
++    }
++
++    public Class getClz() {
++        return clz;
++    }
++
++    public void setClz(Class clz) {
++        this.clz = clz;
++    }
++
++    public String getTitle() {
++        return title;
++    }
++
++    public void setTitle(String title) {
++        this.title = title;
++    }
++
++    public String getDesc() {
++        return desc;
++    }
++
++    public void setDesc(String desc) {
++        this.desc = desc;
++    }
++
++    public String getDate() {
++        return date;
++    }
++
++    public void setDate(String date) {
++        this.date = date;
++    }
++}
+Index: sumile/src/main/res/menu/menu_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/menu/menu_main.xml	(revision )
++++ sumile/src/main/res/menu/menu_main.xml	(revision )
+@@ -0,0 +1,10 @@
++<menu xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    tools:context="net.sumile.sumile.MainActivity">
++    <item
++        android:id="@+id/action_settings"
++        android:orderInCategory="100"
++        android:title="@string/action_settings"
++        app:showAsAction="never" />
++</menu>
+Index: sumile/src/main/java/net/sumile/sumile/activity/WebViewActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/activity/WebViewActivity.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/activity/WebViewActivity.java	(revision )
+@@ -0,0 +1,17 @@
++package net.sumile.sumile.activity;
++
++import android.os.Bundle;
++
++import net.sumile.sumile.R;
++import net.sumile.sumile.base.BaseActivity;
++
++/**
++ * Created by Administrator on 2016/4/28.
++ */
++public class WebViewActivity extends BaseActivity {
++    @Override
++    protected void onCreate(Bundle arg0) {
++        super.onCreate(arg0);
++        setContentView(R.layout.activity_main);
++    }
++}
+Index: sumile/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/values/strings.xml	(revision )
++++ sumile/src/main/res/values/strings.xml	(revision )
+@@ -0,0 +1,4 @@
++<resources>
++    <string name="app_name">Sumile</string>
++    <string name="action_settings">Settings</string>
++</resources>
+Index: sumile/src/main/res/layout/phone_number_chooser.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/layout/phone_number_chooser.xml	(revision )
++++ sumile/src/main/res/layout/phone_number_chooser.xml	(revision )
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:orientation="vertical" android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++</LinearLayout>
+\ No newline at end of file
+Index: sumile/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/build.gradle	(revision )
++++ sumile/build.gradle	(revision )
+@@ -0,0 +1,27 @@
++apply plugin: 'com.android.application'
++
++android {
++    compileSdkVersion 23
++    buildToolsVersion "23.0.3"
++
++    defaultConfig {
++        applicationId "net.sumile.sumile"
++        minSdkVersion 19
++        targetSdkVersion 23
++        versionCode 1
++        versionName "1.0"
++    }
++    buildTypes {
++        release {
++            minifyEnabled false
++            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
++        }
++    }
++}
++
++dependencies {
++    compile fileTree(dir: 'libs', include: ['*.jar'])
++    testCompile 'junit:junit:4.12'
++    compile 'com.android.support:appcompat-v7:23.3.0'
++    compile 'com.android.support:design:23.3.0'
++}
+Index: sumile/src/main/java/net/sumile/sumile/util/ToastUtil.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/util/ToastUtil.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/util/ToastUtil.java	(revision )
+@@ -0,0 +1,13 @@
++package net.sumile.sumile.util;
++
++import android.content.Context;
++import android.widget.Toast;
++
++/**
++ * Created by Administrator on 2016/4/28.
++ */
++public class ToastUtil {
++    public static void showShortToast(Context mContext, String content) {
++        Toast.makeText(mContext, content, Toast.LENGTH_SHORT).show();
++    }
++}
+Index: sumile/src/main/res/values-v21/styles.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/values-v21/styles.xml	(revision )
++++ sumile/src/main/res/values-v21/styles.xml	(revision )
+@@ -0,0 +1,9 @@
++<resources>>
++
++    <style name="AppTheme.NoActionBar">
++        <item name="windowActionBar">false</item>
++        <item name="windowNoTitle">true</item>
++        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
++        <item name="android:statusBarColor">@android:color/transparent</item>
++    </style>
++</resources>
+Index: sumile/src/main/java/net/sumile/sumile/util/ContactsChooserUtil.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/util/ContactsChooserUtil.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/util/ContactsChooserUtil.java	(revision )
+@@ -0,0 +1,318 @@
++package net.sumile.sumile.util;
++
++import android.app.Activity;
++import android.app.AlertDialog;
++import android.content.ContentResolver;
++import android.content.Context;
++import android.content.DialogInterface;
++import android.database.Cursor;
++import android.net.Uri;
++import android.provider.ContactsContract;
++import android.support.v7.widget.LinearLayoutManager;
++import android.support.v7.widget.RecyclerView;
++import android.text.TextUtils;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++import android.widget.CheckBox;
++import android.widget.TextView;
++
++import net.sumile.sumile.R;
++
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.Map;
++
++/**
++ * Created by Administrator on 2016/5/8.
++ * 需要layout文件dialog_layout以及item_dialog
++ */
++public class ContactsChooserUtil {
++    private final String[] PHONES_PROJECTION = new String[]{
++            ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME, ContactsContract.CommonDataKinds.Phone.NUMBER, ContactsContract.CommonDataKinds.Photo.PHOTO_ID, ContactsContract.CommonDataKinds.Phone.CONTACT_ID};
++    /**
++     * 电话号码
++     **/
++    private final int PHONES_NUMBER_INDEX = 1;
++    /**
++     * 联系人显示名称
++     **/
++    private final int PHONES_DISPLAY_NAME_INDEX = 0;
++    private ArrayList<String> mContactsNames = new ArrayList<String>();
++    private ArrayList<String> mContactsNumbers = new ArrayList<String>();
++    private ArrayList<String> mContactsNamesSelected = new ArrayList<String>();
++    private ArrayList<String> mContactsNumbersSelected = new ArrayList<String>();
++    private Context mContext;
++    private Activity mActivity;
++    private ContactsChooserImpl impl;
++
++    public ContactsChooserUtil(Context context, Activity activity, ContactsChooserImpl impl) {
++        this.mContext = context;
++        this.impl = impl;
++        getContacts(activity);
++    }
++
++    public void getContacts(Activity activity) {
++        mActivity = activity;
++        ContentResolver resolver = mActivity.getContentResolver();
++        // 获取Sims卡联系人
++        Uri uri = Uri.parse("content://icc/adn");
++        Cursor phoneCursor = resolver.query(uri, PHONES_PROJECTION, null, null, null);
++        if (phoneCursor != null) {
++            mContactsNames.clear();
++            mContactsNumbers.clear();
++            while (phoneCursor.moveToNext()) {
++                // 得到手机号码
++                String phoneNumber = phoneCursor.getString(PHONES_NUMBER_INDEX);
++                // 当手机号码为空的或者为空字段 跳过当前循环
++                if (TextUtils.isEmpty(phoneNumber))
++                    continue;
++                // 得到联系人名称
++                String contactName = phoneCursor
++                        .getString(PHONES_DISPLAY_NAME_INDEX);
++                mContactsNames.add(contactName);
++                mContactsNumbers.add(phoneNumber);
++            }
++            phoneCursor.close();
++        }
++        showSelectListView();
++    }
++
++    final HashMap<Integer, Boolean> sign = new HashMap<>();
++    int checkedTotal = 0;
++    private int checkedCount = 0;
++
++    private void showSelectListView() {
++        initShow();
++        setUpAdapter();
++        createDialog(mContext, mAdapter);
++        initAction();
++        show();
++    }
++
++    private void initShow() {
++        checkedTotal = 0;
++        if (sign.size() == 0) {
++            for (int i = 0; i < mContactsNames.size(); i++) {
++                sign.put(i, false);
++            }
++        } else {
++            for (Map.Entry<Integer, Boolean> item : sign.entrySet()) {
++                if (!item.getValue()) {
++                    if (allChecked == null) {
++                        allChecked.setChecked(false);
++                        break;
++                    } else {
++                        allChecked.setChecked(true);
++                    }
++                }
++            }
++        }
++    }
++
++    private void initAction() {
++        fanxuan.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                for (Map.Entry<Integer, Boolean> item : sign.entrySet()) {
++                    if (item.getValue()) {
++                        item.setValue(false);
++                    } else {
++                        item.setValue(true);
++                    }
++                }
++                mAdapter.notifyDataSetChanged();
++                invalideAllButton();
++                invalideTotalCount();
++            }
++        });
++        allChecked.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                if (allChecked.isChecked()) {
++                    for (Map.Entry<Integer, Boolean> item : sign.entrySet()) {
++                        item.setValue(true);
++                    }
++                    checkedTotal = sign.size();
++                } else {
++                    for (Map.Entry<Integer, Boolean> item : sign.entrySet()) {
++                        item.setValue(false);
++                    }
++                    checkedTotal = 0;
++                }
++                tv_total.setText("已选择" + checkedTotal + "个联系人");
++                mAdapter.notifyDataSetChanged();
++            }
++        });
++        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
++            @Override
++            public void onClick(DialogInterface dialog, int which) {
++                mContactsNamesSelected.clear();
++                mContactsNumbersSelected.clear();
++                for (Map.Entry<Integer, Boolean> item : sign.entrySet()) {
++                    if (item.getValue()) {
++                        mContactsNamesSelected.add(mContactsNames.get(item.getKey()));
++                        mContactsNumbersSelected.add(mContactsNumbers.get(item.getKey()));
++//                        Toast.makeText(SendMessageActivity.this, mContactsNames.get(item.getKey()) + mContactsNumbers.get(item.getKey()), Toast.LENGTH_SHORT).show();
++                    }
++                }
++                impl.onContactsChoosed(mContactsNamesSelected, mContactsNumbersSelected);
++            }
++        });
++    }
++
++    public interface ContactsChooserImpl {
++        void onContactsChoosed(ArrayList<String> mContactsNames, ArrayList<String> mContactsNumbers);
++    }
++
++    private void setUpAdapter() {
++        mAdapter = new RecyclerView.Adapter<MyViewHolder>() {
++            @Override
++            public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
++                MyViewHolder holder = new MyViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_dialog, parent, false));
++                return holder;
++            }
++
++            @Override
++            public void onBindViewHolder(final MyViewHolder holder, final int position) {
++                holder.tv_name.setText(mContactsNames.get(position));
++                holder.telephone.setText(mContactsNumbers.get(position));
++//                holder.checkBox.setChecked(false);
++                holder.checkBox.setOnClickListener(new View.OnClickListener() {
++                    @Override
++                    public void onClick(View v) {
++                        sign.put(position, holder.checkBox.isChecked());
++                        invalideTotalCount();
++                        invalideAllButton();
++                    }
++                });
++                holder.checkBox.setChecked(sign.get(position));
++            }
++
++
++            @Override
++            public int getItemCount() {
++                return mContactsNames.size();
++            }
++        };
++    }
++
++    private void invalideTotalCount() {
++        checkedTotal = 0;
++        for (Map.Entry<Integer, Boolean> item : sign.entrySet()) {
++            if (item.getValue()) {
++                checkedTotal++;
++            }
++        }
++        tv_total.setText("已选择" + checkedTotal + "个联系人");
++    }
++
++    private void invalideAllButton() {
++        checkedCount = 0;
++        for (Map.Entry<Integer, Boolean> item : sign.entrySet()) {
++            if (!item.getValue()) {
++                //有没有勾选的
++                break;
++            } else {
++                checkedCount++;
++            }
++        }
++        if (checkedCount == sign.size()) {
++            if (!allChecked.isChecked()) {
++                allChecked.setChecked(true);
++            }
++        } else {
++            if (allChecked.isChecked()) {
++                allChecked.setChecked(false);
++            }
++        }
++    }
++
++    private RecyclerView.Adapter<MyViewHolder> mAdapter;
++
++    class MyViewHolder extends RecyclerView.ViewHolder {
++        private TextView tv_name;
++        private CheckBox checkBox;
++        private TextView telephone;
++
++        public MyViewHolder(View itemView) {
++            super(itemView);
++            tv_name = (TextView) itemView.findViewById(R.id.id_tv_name);
++            checkBox = (CheckBox) itemView.findViewById(R.id.checkBox);
++            telephone = (TextView) itemView.findViewById(R.id.tele_number);
++        }
++    }
++
++    //========================================
++    private AlertDialog mDialog;
++    private AlertDialog.Builder builder;
++    public TextView tv_total;
++    public CheckBox allChecked;
++    public TextView fanxuan;
++
++
++    public void createDialog(Context context, RecyclerView.Adapter adapter) {
++        builder = new AlertDialog.Builder(context);
++        View view = LayoutInflater.from(context).inflate(R.layout.dialog_layout, null);
++        allChecked = (CheckBox) view.findViewById(R.id.allChecked);
++        fanxuan = (TextView) view.findViewById(R.id.fanxuan);
++        tv_total = (TextView) view.findViewById(R.id.textView);
++        listView = (RecyclerView) view.findViewById(R.id.listView);
++        listView.setLayoutManager(new LinearLayoutManager(context));
++        listView.setAdapter(adapter);
++        builder.setView(view);
++    }
++
++    public boolean isShowing() {
++        if (mDialog != null) {
++            if (mDialog.isShowing()) {
++                return true;
++            }
++        }
++        return false;
++    }
++
++    public void show() {
++        if (isShowing()) {
++            return;
++        } else {
++            mDialog = builder.create();
++            mDialog.show();
++        }
++    }
++//    private void initViewAdapter(final Context context, HashMap isChecked_hashMap) {
++//        mAdapter = new RecyclerView.Adapter<MyViewHolder>() {
++//
++//            @Override
++//            public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
++//                MyViewHolder holder = new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_dialog, parent, false));
++//                return holder;
++//            }
++//
++//            @Override
++//            public void onBindViewHolder(MyViewHolder holder, int position) {
++//                holder.tv_name.setText();
++//            }
++//
++//            @Override
++//            public int getItemCount() {
++//                return 0;
++//            }
++//        };
++//    }
++//
++//    class MyViewHolder extends RecyclerView.ViewHolder {
++//        private TextView tv_name;
++//
++//        public MyViewHolder(View itemView) {
++//            super(itemView);
++//            tv_name = (TextView) itemView.findViewById(R.id.id_tv_name);
++//        }
++//    }
++
++    private RecyclerView listView;
++
++    private void initViewAction(View v, RecyclerView.Adapter mAdapter) {
++
++    }
++}
+Index: sumile/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/layout/activity_main.xml	(revision )
++++ sumile/src/main/res/layout/activity_main.xml	(revision )
+@@ -0,0 +1,23 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@color/white"
++    android:orientation="vertical">
++
++    <include
++        android:id="@+id/id_mainHeader"
++        layout="@layout/main_header"
++        android:layout_width="match_parent"
++        android:layout_height="50dip" />
++
++    <android.support.v7.widget.RecyclerView
++        android:id="@+id/id_mainRecycleView"
++        android:layout_width="match_parent"
++        android:background="@color/baseColor"
++        android:layout_height="match_parent"
++        android:divider="@drawable/list_divider"
++        android:dividerHeight="10dp">
++
++    </android.support.v7.widget.RecyclerView>
++</LinearLayout>
+\ No newline at end of file
+Index: sumile/src/androidTest/java/net/sumile/sumile/ApplicationTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/androidTest/java/net/sumile/sumile/ApplicationTest.java	(revision )
++++ sumile/src/androidTest/java/net/sumile/sumile/ApplicationTest.java	(revision )
+@@ -0,0 +1,13 @@
++package net.sumile.sumile;
++
++import android.app.Application;
++import android.test.ApplicationTestCase;
++
++/**
++ * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
++ */
++public class ApplicationTest extends ApplicationTestCase<Application> {
++    public ApplicationTest() {
++        super(Application.class);
++    }
++}
+\ No newline at end of file
+Index: sumile/src/main/java/net/sumile/sumile/util/IntentHelper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/java/net/sumile/sumile/util/IntentHelper.java	(revision )
++++ sumile/src/main/java/net/sumile/sumile/util/IntentHelper.java	(revision )
+@@ -0,0 +1,21 @@
++package net.sumile.sumile.util;
++
++import android.content.Context;
++import android.content.Intent;
++import android.net.Uri;
++
++/**
++ * Created by Administrator on 2016/4/28.
++ */
++public class IntentHelper {
++    public static void openInWebView(Context mContext, String url) {
++        if (!url.contains("http") && !url.contains("https")) {
++            url = "http://" + url;
++        }
++        Intent intent = new Intent();
++        intent.setAction(Intent.ACTION_VIEW);
++        Uri content_url = Uri.parse(url);
++        intent.setData(content_url);
++        mContext.startActivity(intent);
++    }
++}
+Index: sumile/src/main/res/values-w820dp/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sumile/src/main/res/values-w820dp/dimens.xml	(revision )
++++ sumile/src/main/res/values-w820dp/dimens.xml	(revision )
+@@ -0,0 +1,6 @@
++<resources>
++    <!-- Example customization of dimensions originally defined in res/values/dimens.xml
++         (such as screen margins) for screens with more than 820dp of available width. This
++         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively). -->
++    <dimen name="activity_horizontal_margin">64dp</dimen>
++</resources>
