@@ -1,5 +1,7 @@
 package net.sumile.sumile.activity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -25,7 +27,6 @@ import java.util.ArrayList;
  */
 public class ContactChooserActivity extends BaseListActivity {
     private ArrayList<DescribeAndCode> data = new ArrayList<DescribeAndCode>();
-    private Context mContext;
 
     @Override
     public boolean ifUsingDefault() {
@@ -35,7 +36,6 @@ public class ContactChooserActivity extends BaseListActivity {
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
-        mContext = this;
         data.add(new DescribeAndCode("获取联系人信息:方法1", "Intent localIntent = new Intent(\"android.intent.action.PICK\");\n" +
                 "localIntent.setType(\"vnd.android.cursor.dir/phone\");\n" +
                 "mActivity.startActivityForResult(localIntent, REQUEST_0);"));
@@ -61,7 +61,7 @@ public class ContactChooserActivity extends BaseListActivity {
 
             @Override
             public void onLongClickToShowCode(View tv, int position) {
-                DialogUtil.showTextDialog(mContext, data.get(position).getCode());
+                DialogUtil.showTextDialog(ContactChooserActivity.this, data.get(position).getCode());
             }
 
             @Override
@@ -81,13 +81,13 @@ public class ContactChooserActivity extends BaseListActivity {
 
     private void getUserInfo3() {
         content = "";
-        new ContactsChooserUtil(mContext, ContactChooserActivity.this, new ContactsChooserUtil.ContactsChooserImpl() {
+        new ContactsChooserUtil(ContactChooserActivity.this, new ContactsChooserUtil.ContactsChooserImpl() {
             @Override
             public void onContactsChoosed(ArrayList<String> mContactsNames, ArrayList<String> mContactsNumbers) {
                 for (int i = 0; i < mContactsNames.size(); i++) {
                     content += "姓名:" + mContactsNames.get(i) + "   电话:" + mContactsNumbers.get(i) + "\n";
                 }
-                DialogUtil.showTextDialog(mContext, content.toString());
+                mDialog = DialogUtil.showTextDialog(ContactChooserActivity.this, content.toString());
             }
         });
     }
@@ -96,6 +96,8 @@ public class ContactChooserActivity extends BaseListActivity {
         Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
         startActivityForResult(intent, REQUEST_1);
     }
+
+    private Dialog mDialog = null;
 
     private void getUserInfo1() {
         Intent localIntent = new Intent("android.intent.action.PICK");
@@ -107,6 +109,15 @@ public class ContactChooserActivity extends BaseListActivity {
     private static final int REQUEST_1 = 1;
     String disPlayName;
     String phoneNumber;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mDialog != null) {
+            mDialog.dismiss();
+            mDialog = null;
+        }
+    }
 
     protected void onActivityResult(int paramInt1, int resultCode, Intent paramIntent) {
         if (paramIntent == null) {
@@ -121,7 +132,7 @@ public class ContactChooserActivity extends BaseListActivity {
                         if (localCursor != null)
                             while (true) {
                                 if (!localCursor.moveToNext()) {
-                                    DialogUtil.showTextDialog(mContext, this.disPlayName + "\n" + this.phoneNumber);
+                                    mDialog = DialogUtil.showTextDialog(ContactChooserActivity.this, this.disPlayName + "\n" + this.phoneNumber);
                                     super.onActivityResult(paramInt1, resultCode, paramIntent);
                                     return;
                                 }
@@ -143,7 +154,7 @@ public class ContactChooserActivity extends BaseListActivity {
                     cursor.moveToFirst();
                     String contactName = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
                     String number = getContactNumber(cursor);
-                    DialogUtil.showTextDialog(mContext, contactName + "\n" + number);
+                    mDialog = DialogUtil.showTextDialog(ContactChooserActivity.this, contactName + "\n" + number);
                 }
                 break;
         }

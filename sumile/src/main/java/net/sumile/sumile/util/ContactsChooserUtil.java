@@ -2,6 +2,7 @@ package net.sumile.sumile.util;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,6 +15,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -42,12 +44,10 @@ public class ContactsChooserUtil {
     private ArrayList<String> mContactsNumbers = new ArrayList<String>();
     private ArrayList<String> mContactsNamesSelected = new ArrayList<String>();
     private ArrayList<String> mContactsNumbersSelected = new ArrayList<String>();
-    private Context mContext;
     private Activity mActivity;
     private ContactsChooserImpl impl;
 
-    public ContactsChooserUtil(Context context, Activity activity, ContactsChooserImpl impl) {
-        this.mContext = context;
+    public ContactsChooserUtil(Activity activity, ContactsChooserImpl impl) {
         this.impl = impl;
         getContacts(activity);
     }
@@ -85,7 +85,7 @@ public class ContactsChooserUtil {
     private void showSelectListView() {
         initShow();
         setUpAdapter();
-        createDialog(mContext, mAdapter);
+        createDialog(mActivity, mAdapter);
         initAction();
         show();
     }
@@ -144,9 +144,9 @@ public class ContactsChooserUtil {
                 mAdapter.notifyDataSetChanged();
             }
         });
-        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
+        positiveButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
                 mContactsNamesSelected.clear();
                 mContactsNumbersSelected.clear();
                 for (Map.Entry<Integer, Boolean> item : sign.entrySet()) {
@@ -157,6 +157,7 @@ public class ContactsChooserUtil {
                     }
                 }
                 impl.onContactsChoosed(mContactsNamesSelected, mContactsNumbersSelected);
+                mDialog.dismiss();
             }
         });
     }
@@ -169,7 +170,7 @@ public class ContactsChooserUtil {
         mAdapter = new RecyclerView.Adapter<MyViewHolder>() {
             @Override
             public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-                MyViewHolder holder = new MyViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_dialog, parent, false));
+                MyViewHolder holder = new MyViewHolder(LayoutInflater.from(mActivity).inflate(R.layout.item_dialog, parent, false));
                 return holder;
             }
 
@@ -252,23 +253,24 @@ public class ContactsChooserUtil {
     }
 
     //========================================
-    private AlertDialog mDialog;
-    private AlertDialog.Builder builder;
+    private Dialog mDialog;
     public TextView tv_total;
     public CheckBox allChecked;
     public TextView fanxuan;
-
+    public TextView positiveButton;
 
     public void createDialog(Context context, RecyclerView.Adapter adapter) {
-        builder = new AlertDialog.Builder(context);
+        mDialog = new Dialog(context);
+        mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_layout, null);
         allChecked = (CheckBox) view.findViewById(R.id.allChecked);
+        positiveButton = (TextView) view.findViewById(R.id.positiveButton);
         fanxuan = (TextView) view.findViewById(R.id.fanxuan);
         tv_total = (TextView) view.findViewById(R.id.textView);
         listView = (RecyclerView) view.findViewById(R.id.listView);
         listView.setLayoutManager(new LinearLayoutManager(context));
         listView.setAdapter(adapter);
-        builder.setView(view);
+        mDialog.setContentView(view);
     }
 
     public boolean isShowing() {
@@ -284,8 +286,13 @@ public class ContactsChooserUtil {
         if (isShowing()) {
             return;
         } else {
-            mDialog = builder.create();
-            mDialog.show();
+            if (!(mActivity).isFinishing()) {
+                try {
+                    mDialog.show();
+                } catch (Exception e) {
+
+                }
+            }
         }
     }
 //    private void initViewAdapter(final Context context, HashMap isChecked_hashMap) {
