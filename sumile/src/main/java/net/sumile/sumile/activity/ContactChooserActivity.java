@@ -36,12 +36,12 @@ public class ContactChooserActivity extends BaseListActivity {
     @Override
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
-        data.add(new DescribeAndCode("获取联系人信息:方法1", "Intent localIntent = new Intent(\"android.intent.action.PICK\");\n" +
+        data.add(new DescribeAndCode("方法1", "Intent localIntent = new Intent(\"android.intent.action.PICK\");\n" +
                 "localIntent.setType(\"vnd.android.cursor.dir/phone\");\n" +
                 "mActivity.startActivityForResult(localIntent, REQUEST_0);"));
-        data.add(new DescribeAndCode("获取联系人信息:方法2", "Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);\n" +
+        data.add(new DescribeAndCode("方法2", "Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);\n" +
                 "startActivityForResult(intent, REQUEST_1);"));
-        data.add(new DescribeAndCode("获取联系人信息:自定义view显示所有联系人，通过勾选来选择联系人。", "代码太多了，查看util下的ContactsChooserUtil"));
+        data.add(new DescribeAndCode("自定义view显示所有联系人，通过勾选来选择联系人。", "代码太多了，查看util下的ContactsChooserUtil"));
         initDefaultRecycleView(data, new DefaultRecycleViewInterface() {
             @Override
             public void onItemClick(View tv, int position) {
@@ -83,9 +83,9 @@ public class ContactChooserActivity extends BaseListActivity {
         content = "";
         new ContactsChooserUtil(ContactChooserActivity.this, new ContactsChooserUtil.ContactsChooserImpl() {
             @Override
-            public void onContactsChoosed(ArrayList<String> mContactsNames, ArrayList<String> mContactsNumbers) {
-                for (int i = 0; i < mContactsNames.size(); i++) {
-                    content += "姓名:" + mContactsNames.get(i) + "   电话:" + mContactsNumbers.get(i) + "\n";
+            public void onContactsChoosed(ArrayList<ContactsChooserUtil.NameNumberPair> selectedNameNumbers) {
+                for (int i = 0; i < selectedNameNumbers.size(); i++) {
+                    content += "姓名:" + selectedNameNumbers.get(i).getName() + "   电话:" + selectedNameNumbers.get(i).getPhoneNumber() + "\n";
                 }
                 mDialog = DialogUtil.showTextDialog(ContactChooserActivity.this, content.toString());
             }

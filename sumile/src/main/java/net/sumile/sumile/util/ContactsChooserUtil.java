@@ -22,8 +22,11 @@ import android.widget.TextView;
 import net.sumile.sumile.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.jar.Attributes;
 
 /**
  * Created by Administrator on 2016/5/8.
@@ -40,10 +43,8 @@ public class ContactsChooserUtil {
      * 联系人显示名称
      **/
     private final int PHONES_DISPLAY_NAME_INDEX = 0;
-    private ArrayList<String> mContactsNames = new ArrayList<String>();
-    private ArrayList<String> mContactsNumbers = new ArrayList<String>();
-    private ArrayList<String> mContactsNamesSelected = new ArrayList<String>();
-    private ArrayList<String> mContactsNumbersSelected = new ArrayList<String>();
+    private ArrayList<NameNumberPair> mContacts = new ArrayList<NameNumberPair>();
+    private ArrayList<NameNumberPair> mSelected = new ArrayList<NameNumberPair>();
     private Activity mActivity;
     private ContactsChooserImpl impl;
 
@@ -59,8 +60,7 @@ public class ContactsChooserUtil {
         Uri uri = Uri.parse("content://icc/adn");
         Cursor phoneCursor = resolver.query(uri, PHONES_PROJECTION, null, null, null);
         if (phoneCursor != null) {
-            mContactsNames.clear();
-            mContactsNumbers.clear();
+            mContacts.clear();
             while (phoneCursor.moveToNext()) {
                 // 得到手机号码
                 String phoneNumber = phoneCursor.getString(PHONES_NUMBER_INDEX);
@@ -70,8 +70,10 @@ public class ContactsChooserUtil {
                 // 得到联系人名称
                 String contactName = phoneCursor
                         .getString(PHONES_DISPLAY_NAME_INDEX);
-                mContactsNames.add(contactName);
-                mContactsNumbers.add(phoneNumber);
+                NameNumberPair pair = new NameNumberPair();
+                pair.setName(contactName);
+                pair.setPhoneNumber(phoneNumber);
+                mContacts.add(pair);
             }
             phoneCursor.close();
         }
@@ -83,6 +85,7 @@ public class ContactsChooserUtil {
     private int checkedCount = 0;
 
     private void showSelectListView() {
+        Collections.sort(mContacts, new SortUtil());
         initShow();
         setUpAdapter();
         createDialog(mActivity, mAdapter);
@@ -93,7 +96,7 @@ public class ContactsChooserUtil {
     private void initShow() {
         checkedTotal = 0;
         if (sign.size() == 0) {
-            for (int i = 0; i < mContactsNames.size(); i++) {
+            for (int i = 0; i < mContacts.size(); i++) {
                 sign.put(i, false);
             }
         } else {
@@ -144,26 +147,44 @@ public class ContactsChooserUtil {
                 mAdapter.notifyDataSetChanged();
             }
         });
+        negativeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismissDialog();
+            }
+        });
         positiveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mContactsNamesSelected.clear();
-                mContactsNumbersSelected.clear();
+                mSelected.clear();
                 for (Map.Entry<Integer, Boolean> item : sign.entrySet()) {
                     if (item.getValue()) {
-                        mContactsNamesSelected.add(mContactsNames.get(item.getKey()));
-                        mContactsNumbersSelected.add(mContactsNumbers.get(item.getKey()));
+                        NameNumberPair pair = new NameNumberPair();
+                        pair.setName(mContacts.get(item.getKey()).getName());
+                        pair.setPhoneNumber(mContacts.get(item.getKey()).getPhoneNumber());
+                        mSelected.add(pair);
 //                        Toast.makeText(SendMessageActivity.this, mContactsNames.get(item.getKey()) + mContactsNumbers.get(item.getKey()), Toast.LENGTH_SHORT).show();
                     }
                 }
-                impl.onContactsChoosed(mContactsNamesSelected, mContactsNumbersSelected);
-                mDialog.dismiss();
+                Collections.sort(mSelected, new SortUtil());
+                impl.onContactsChoosed(mSelected);
+                dismissDialog();
             }
         });
     }
 
+    private void dismissDialog() {
+        if (mActivity != null && !mActivity.isFinishing())
+            if (isShowing()) {
+                if (mDialog == null) {
+                    return;
+                }
+                mDialog.dismiss();
+            }
+    }
+
     public interface ContactsChooserImpl {
-        void onContactsChoosed(ArrayList<String> mContactsNames, ArrayList<String> mContactsNumbers);
+        void onContactsChoosed(ArrayList<NameNumberPair> selectedNameNumbers);
     }
 
     private void setUpAdapter() {
@@ -182,8 +203,8 @@ public class ContactsChooserUtil {
                         holder.checkBox.performClick();
                     }
                 });
-                holder.tv_name.setText(mContactsNames.get(position));
-                holder.telephone.setText(mContactsNumbers.get(position));
+                holder.tv_name.setText(mContacts.get(position).getName());
+                holder.telephone.setText(mContacts.get(position).getPhoneNumber());
 //                holder.checkBox.setChecked(false);
                 holder.checkBox.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -199,7 +220,7 @@ public class ContactsChooserUtil {
 
             @Override
             public int getItemCount() {
-                return mContactsNames.size();
+                return mContacts.size();
             }
         };
     }
@@ -252,12 +273,34 @@ public class ContactsChooserUtil {
         }
     }
 
+    public class NameNumberPair {
+        private String name;
+        private String phoneNumber;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getPhoneNumber() {
+            return phoneNumber;
+        }
+
+        public void setPhoneNumber(String phoneNumber) {
+            this.phoneNumber = phoneNumber;
+        }
+    }
+
     //========================================
     private Dialog mDialog;
     public TextView tv_total;
     public CheckBox allChecked;
     public TextView fanxuan;
     public TextView positiveButton;
+    public TextView negativeButton;
 
     public void createDialog(Context context, RecyclerView.Adapter adapter) {
         mDialog = new Dialog(context);
@@ -265,6 +308,7 @@ public class ContactsChooserUtil {
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_layout, null);
         allChecked = (CheckBox) view.findViewById(R.id.allChecked);
         positiveButton = (TextView) view.findViewById(R.id.positiveButton);
+        negativeButton = (TextView) view.findViewById(R.id.negativeButton);
         fanxuan = (TextView) view.findViewById(R.id.fanxuan);
         tv_total = (TextView) view.findViewById(R.id.textView);
         listView = (RecyclerView) view.findViewById(R.id.listView);

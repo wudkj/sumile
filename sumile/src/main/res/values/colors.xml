@@ -9,4 +9,5 @@
     <color name="white">#ffffff</color>
     <color name="contentTextColorWhite">#ffffff</color>
     <color name="contentTextColor">#e2dddd</color>
+    <color name="contentTextColorRed_Brown">#a63535</color>
 </resources>

@@ -17,7 +17,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dip"
             android:text="已选择0个联系人"
-            android:textColor="#a63535" />
+            android:textColor="@color/contentTextColorRed_Brown" />
 
 
         <CheckBox
@@ -40,7 +40,7 @@
             android:layout_toLeftOf="@id/allChecked"
             android:gravity="center_vertical"
             android:text="反选"
-            android:textColor="#a63535" />
+            android:textColor="@color/contentTextColorRed_Brown" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -60,6 +60,21 @@
             android:paddingRight="20dp"
             android:paddingTop="10dp"
             android:text="确定"
+            android:textColor="@color/contentTextColorRed_Brown"
+            android:textSize="@dimen/bigTextSize" />
+
+        <TextView
+            android:id="@+id/negativeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_toLeftOf="@id/positiveButton"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:text="取消"
+            android:textColor="@color/contentTextColorRed_Brown"
             android:textSize="@dimen/bigTextSize" />
     </RelativeLayout>
 
