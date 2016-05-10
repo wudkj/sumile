@@ -6,7 +6,6 @@ sumile是由sumile集合各种方法或者第三方库开发的一个程序示�
 本程序除点按屏幕外，长按在不同的页面中会有展示代码，复制内容的功能，方便使用。
 
 ![image](https://github.com/wudkj/sumile/raw/master/sumile/pics/runProgram.gif)
-<img src="/raw/master/sumile/pics/runProgram.gif" />
 
 ### Version History
 
@@ -14,15 +13,3 @@ sumile是由sumile集合各种方法或者第三方库开发的一个程序示�
 
 * 添加获取联系人信息工具（三种方法），其中最后一种是定义了一个dialog来让用户选择联系人，包含全选，反选功能，并对数据进行了排序。
 
-
-
-
-
-*Someday/Maybe features*
-
-* deeper WebVTT support (alignment, color, etc.) - include captionator
-* Full support for Ender.js, including mediaelement-and-player-standalone which includes ender.
-* thin line when controls are off
-* system-wide events
-* Ogg/Theora playback
-* Better alignment with native MediaElement (using shimichanga.com techniques)
