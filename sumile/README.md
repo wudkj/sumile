@@ -5,7 +5,8 @@ sumile是由sumile集合各种方法或者第三方库开发的一个程序示�
 
 本程序除点按屏幕外，长按在不同的页面中会有展示代码，复制内容的功能，方便使用。
 
-<img src="/blob/master/pics/runProgram.gif"></img>
+![image](https://github.com/wudkj/sumile/raw/master/sumile/pics/runProgram.gif)
+<img src="/raw/master/sumile/pics/runProgram.gif" />
 
 ### Version History
 
